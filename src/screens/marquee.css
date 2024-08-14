@@ -1,0 +1,35 @@
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:rgb(209, 219, 221); /* Optional: Background color for the marquee */
+}
+
+.marquee-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  animation: marquee 25s linear infinite;
+}
+
+.marquee-item {
+  flex: 0 0 auto;
+  padding: 0 2rem; /* Space between items */
+  font-size: 1.2rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

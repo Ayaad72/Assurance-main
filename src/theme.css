@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mainColor,
+.mainBbColor {
+  color: var(--blueThemeColor);
+}
+
+
+.text-red{
+  color:#D70040;
+}
+
+.mainBbColor {
+  background-color: var(--blueThemeColor);
+}
+/* theme.css */
+:root {
+  --blueThemeColor: #3d65b0;
+
+  --mainBgColor: #1b254b;
+
+  --socilaIconBgColor: #ff8000;
+}
+
+body {
+  overflow-y: scroll; /* Enables scrolling */
+  scrollbar-width: none; /* For Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
