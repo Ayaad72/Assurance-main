@@ -103,13 +103,13 @@ const FinancialSolutions = () => {
           >
             <Link
               to="/HomeEquity"
-              className="px-4 md:px-6 py-2 md:py-3 bg-red-500 text-white rounded-md text-base md:text-lg font-medium hover:bg-gray-400 transition"
+              className="px-4 md:px-6 py-2 md:py-3 bg-red-700 border-[2px] border-red-700 text-white rounded-md text-base md:text-lg font-medium hover:bg-red-600 transition"
             >
               Explore Our Solutions
             </Link>
             <a
               href="#get-started"
-              className="px-4 md:px-6 py-2 md:py-3 bg-red- text-white rounded-md text-base md:text-lg font-medium hover:bg-gray-800 transition"
+              className="px-4 md:px-6 py-2 md:py-3 bg-red-700 text-white rounded-md text-base md:text-lg font-medium hover:bg-gray-800 transition"
             >
               Get Started
             </a>
@@ -171,7 +171,9 @@ const FinancialSolutions = () => {
             <div className="space-y-6 bg-blue-50 rounded-lg p-4 md:p-6">
               <div className="flex sm:items-center max-sm:flex-col-reverse">
                 <div className="mr-3">
-                  <h4 className="text-gray-800 text-sm md:text-base font-bold">John Doe</h4>
+                  <h4 className="text-gray-800 text-sm md:text-base font-bold">
+                    John Doe
+                  </h4>
                   <p className="text-xs md:text-sm text-gray-500 mt-2">
                     Veniam proident aute magna anim excepteur et ex consectetur
                     velit ullamco veniam minim aute sit.
@@ -185,7 +187,9 @@ const FinancialSolutions = () => {
 
               <div className="flex sm:items-center max-sm:flex-col-reverse p-4 md:p-6 relative md:left-12 bg-white shadow-[0_2px_20px_-4px_rgba(93,96,127,0.2)] rounded-lg">
                 <div className="mr-3">
-                  <h4 className="text-gray-800 text-sm md:text-base font-bold">Mark Adair</h4>
+                  <h4 className="text-gray-800 text-sm md:text-base font-bold">
+                    Mark Adair
+                  </h4>
                   <p className="text-xs md:text-sm text-gray-500 mt-2">
                     Veniam proident aute magna anim excepteur et ex consectetur
                     velit ullamco veniam minim aute sit.
@@ -199,7 +203,9 @@ const FinancialSolutions = () => {
 
               <div className="flex sm:items-center max-sm:flex-col-reverse">
                 <div className="mr-3">
-                  <h4 className="text-gray-800 text-sm md:text-base font-bold">Olivia Thomson</h4>
+                  <h4 className="text-gray-800 text-sm md:text-base font-bold">
+                    Olivia Thomson
+                  </h4>
                   <p className="text-xs md:text-sm text-gray-500 mt-2">
                     Veniam proident aute magna anim excepteur et ex consectetur
                     velit ullamco veniam minim aute sit.
@@ -215,7 +221,9 @@ const FinancialSolutions = () => {
             <div className="space-y-6 bg-red-50 rounded-lg p-4 md:p-6">
               <div className="flex sm:items-center max-sm:flex-col-reverse">
                 <div className="mr-3">
-                  <h4 className="text-gray-800 text-sm md:text-base font-bold">Alec Whittaker</h4>
+                  <h4 className="text-gray-800 text-sm md:text-base font-bold">
+                    Alec Whittaker
+                  </h4>
                   <p className="text-xs md:text-sm text-gray-500 mt-2">
                     Veniam proident aute magna anim excepteur et ex consectetur
                     velit ullamco veniam minim aute sit.
@@ -229,7 +237,9 @@ const FinancialSolutions = () => {
 
               <div className="flex sm:items-center max-sm:flex-col-reverse p-4 md:p-6 relative md:left-12 bg-white shadow-[0_2px_20px_-4px_rgba(93,96,127,0.2)] rounded-lg">
                 <div className="mr-3">
-                  <h4 className="text-gray-800 text-sm md:text-base font-bold">Alisha Jone</h4>
+                  <h4 className="text-gray-800 text-sm md:text-base font-bold">
+                    Alisha Jone
+                  </h4>
                   <p className="text-xs md:text-sm text-gray-500 mt-2">
                     Veniam proident aute magna anim excepteur et ex consectetur
                     velit ullamco veniam minim aute sit.
@@ -243,7 +253,9 @@ const FinancialSolutions = () => {
 
               <div className="flex sm:items-center max-sm:flex-col-reverse">
                 <div className="mr-3">
-                  <h4 className="text-gray-800 text-sm md:text-base font-bold">Nicole Anne</h4>
+                  <h4 className="text-gray-800 text-sm md:text-base font-bold">
+                    Nicole Anne
+                  </h4>
                   <p className="text-xs md:text-sm text-gray-500 mt-2">
                     Veniam proident aute magna anim excepteur et ex consectetur
                     velit ullamco veniam minim aute sit.

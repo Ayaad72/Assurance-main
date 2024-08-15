@@ -30,7 +30,6 @@ const slides = [
       "Empower your business decisions with data-driven insights that lead to sustainable growth and long-term success in a competitive market.",
   },
 ];
-
 const marqueeItems = [
   "10+ Years of Experience",
   "890 Cases Solved",
@@ -42,7 +41,6 @@ const marqueeItems = [
   "Tailored Financial Solutions",
   "250 Business Partners", // Duplicate item example
 ];
-
 const serviceItems = [
   {
     icon: <FaBuilding />,
@@ -60,7 +58,6 @@ const serviceItems = [
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
 ];
-
 const HomeScreen = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [updateloanfunc, { isLoading, error, isSuccess }] =
@@ -115,7 +112,6 @@ const HomeScreen = () => {
               Trust us to navigate the complexities of financial planning, so
               you can enjoy a secure and prosperous future.
             </p>
-
             <button
               type="button"
               className="mt-6 bg-transparent hover:bg-red-700 hover:text-white border-2 border-red-700 transition-all text-red-700 font-semibold text-sm tracking-wide rounded-md px-6 py-2.5"
