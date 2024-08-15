@@ -182,7 +182,7 @@ const LoanApplicationForm = () => {
   return (
     <div className="pb-[124px] font-sans min-h-screen flex flex-col items-center bg-gray-100">
       <header className="text-center py-8">
-        <h1 className="text-3xl font-bold text-red-700">Personal Loan Form</h1>
+        <h1 className="text-3xl font-bold text-gray-700">Personal Loan Form</h1>
       </header>
 
       <div className=" max-w-5xl mx-auto p-4 bg-white shadow-md rounded-md">
@@ -199,7 +199,11 @@ const LoanApplicationForm = () => {
               </div>
               <div
                 className={`w-full h-1 mx-4 rounded-lg ${
+<<<<<<< HEAD
                   currentSection >= 1 ? "bg-gray-700" : "bg-red-300"
+=======
+                  currentSection >= 1 ? "bg-red-700" : "bg-gray-300"
+>>>>>>> 9f070d51d2bd497a9383cecccf210e336fede15d
                 }`}
               ></div>
             </div>
@@ -217,7 +221,11 @@ const LoanApplicationForm = () => {
                   currentSection >= 2
                     ? "bg-gray-700"
                     : currentSection === 1
+<<<<<<< HEAD
                     ? "bg-gray-500"
+=======
+                    ? "bg-gray-300"
+>>>>>>> 9f070d51d2bd497a9383cecccf210e336fede15d
                     : "bg-gray-300"
                 }`}
               >
@@ -225,7 +233,7 @@ const LoanApplicationForm = () => {
               </div>
               <div
                 className={`w-full h-1 mx-4 rounded-lg ${
-                  currentSection >= 2 ? "bg-red-700" : "bg-red-300"
+                  currentSection >= 2 ? "bg-red-700" : "bg-gray-300"
                 }`}
               ></div>
             </div>
@@ -242,14 +250,14 @@ const LoanApplicationForm = () => {
                     ? "bg-red-700"
                     : currentSection === 2
                     ? "bg-red-700"
-                    : "bg-red-300"
+                    : "bg-gray-300"
                 }`}
               >
                 <span className="text-base text-white font-bold">3</span>
               </div>
               <div
                 className={`w-full h-1 mx-4 rounded-lg ${
-                  currentSection >= 3 ? "bg-red-700" : "bg-red-300"
+                  currentSection >= 3 ? "bg-red-700" : "bg-gray-300"
                 }`}
               ></div>
             </div>
@@ -266,7 +274,7 @@ const LoanApplicationForm = () => {
                     ? "bg-red-700"
                     : currentSection === 3
                     ? "bg-red-700"
-                    : "bg-red-300"
+                    : "bg-gray-300"
                 }`}
               >
                 <span className="text-base text-white font-bold">
@@ -356,8 +364,8 @@ const LoanApplicationForm = () => {
         {/* Personal Information Section */}
         {currentSection === 0 && (
           <form id="loanForm1" onSubmit={handleSubmit1}>
-            <fieldset className="form-section border border-red-500 p-8 rounded-[12px]">
-              <legend className="text-lg text-red-700 font-semibold mb-4 p-[10px] ">
+            <fieldset className="form-section border border-gray-500 p-8 rounded-[12px]">
+              <legend className="text-lg text-gray-700 font-semibold mb-4 p-[10px] ">
                 Personal Information
               </legend>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -372,7 +380,7 @@ const LoanApplicationForm = () => {
                     name="firstName"
                     value={formData1.firstName}
                     onChange={handleChange1}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
                 <div>
@@ -385,7 +393,7 @@ const LoanApplicationForm = () => {
                     name="lastName"
                     value={formData1.lastName}
                     onChange={handleChange1}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
                 <div>
@@ -398,7 +406,7 @@ const LoanApplicationForm = () => {
                     name="email"
                     value={formData1.email}
                     onChange={handleChange1}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
                 <div>
@@ -411,7 +419,7 @@ const LoanApplicationForm = () => {
                     name="dob"
                     value={formData1.dob}
                     onChange={handleChange1}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
                 <div>
@@ -424,7 +432,7 @@ const LoanApplicationForm = () => {
                     name="ssn"
                     value={formData1.ssn}
                     onChange={handleChange1}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
                 <div>
@@ -437,7 +445,7 @@ const LoanApplicationForm = () => {
                     name="phoneHome"
                     value={formData1.phoneHome}
                     onChange={handleChange1}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
                 <div>
@@ -450,7 +458,7 @@ const LoanApplicationForm = () => {
                     name="address1"
                     value={formData1.address1}
                     onChange={handleChange1}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
                 <div>
@@ -463,7 +471,7 @@ const LoanApplicationForm = () => {
                     name="zipCode"
                     value={formData1.zipCode}
                     onChange={handleChange1}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
                 <div>
@@ -476,7 +484,7 @@ const LoanApplicationForm = () => {
                     name="driversLicense"
                     value={formData1.driversLicense}
                     onChange={handleChange1}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
                 <div>
@@ -489,7 +497,7 @@ const LoanApplicationForm = () => {
                     name="driversLicenseState"
                     value={formData1.driversLicenseState}
                     onChange={handleChange1}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
               </div>
@@ -500,7 +508,7 @@ const LoanApplicationForm = () => {
         {/* Income Information Section */}
         {currentSection === 1 && (
           <form id="loanForm2" onSubmit={handleSubmit2}>
-            <fieldset className="form-section border border-red-500 p-8 rounded-[10px]">
+            <fieldset className="form-section border border-gray-500 p-8 rounded-[10px]">
               <legend className="text-lg text-red-700 font-semibold mb-4 p-[10px] ">
                 Income Information
               </legend>
@@ -516,7 +524,7 @@ const LoanApplicationForm = () => {
                     name="requestedAmount"
                     value={formData2.requestedAmount}
                     onChange={handleChange2}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
                 <div>
@@ -529,7 +537,7 @@ const LoanApplicationForm = () => {
                     name="loanPurpose"
                     value={formData2.loanPurpose}
                     onChange={handleChange2}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
                 <div>
@@ -542,7 +550,7 @@ const LoanApplicationForm = () => {
                     name="annualIncome"
                     value={formData2.annualIncome}
                     onChange={handleChange2}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
                 <div>
@@ -555,7 +563,7 @@ const LoanApplicationForm = () => {
                     name="employmentStatus"
                     value={formData2.employmentStatus}
                     onChange={handleChange2}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
                 <div>
@@ -568,7 +576,7 @@ const LoanApplicationForm = () => {
                     name="employerName"
                     value={formData2.employerName}
                     onChange={handleChange2}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
                 <div>
@@ -581,7 +589,7 @@ const LoanApplicationForm = () => {
                     name="workPhone"
                     value={formData2.workPhone}
                     onChange={handleChange2}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
                 <div>
@@ -594,7 +602,7 @@ const LoanApplicationForm = () => {
                     name="position"
                     value={formData2.position}
                     onChange={handleChange2}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
                 <div>
@@ -607,7 +615,7 @@ const LoanApplicationForm = () => {
                     name="timeWithEmployer"
                     value={formData2.timeWithEmployer}
                     onChange={handleChange2}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
               </div>
@@ -618,7 +626,7 @@ const LoanApplicationForm = () => {
         {/* Payment Details Section */}
         {currentSection === 2 && (
           <form id="loanForm3" onSubmit={handleSubmit3}>
-            <fieldset className="form-section border border-red-500 p-8 rounded-[10px]">
+            <fieldset className="form-section border border-red-500 p-8 rounded-[12px]">
               <legend className="text-lg text-red-700 font-semibold mb-4 p-[10px] ">
                 Payment Details
               </legend>
@@ -634,7 +642,7 @@ const LoanApplicationForm = () => {
                     name="paymentMethod"
                     value={formData3.paymentMethod}
                     onChange={handleChange3}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
                 <div>
@@ -647,7 +655,7 @@ const LoanApplicationForm = () => {
                     name="accountNumber"
                     value={formData3.accountNumber}
                     onChange={handleChange3}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
                 <div>
@@ -660,7 +668,7 @@ const LoanApplicationForm = () => {
                     name="routingNumber"
                     value={formData3.routingNumber}
                     onChange={handleChange3}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
                 <div>
@@ -673,7 +681,7 @@ const LoanApplicationForm = () => {
                     name="bankName"
                     value={formData3.bankName}
                     onChange={handleChange3}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
                 <div>
@@ -686,7 +694,7 @@ const LoanApplicationForm = () => {
                     name="accountType"
                     value={formData3.accountType}
                     onChange={handleChange3}
-                    className="w-full px-3 py-2 border border-red-300 rounded-md outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
                 </div>
               </div>
@@ -724,7 +732,6 @@ const LoanApplicationForm = () => {
             </button>
           )}
         </div>
-        {/* </form> */}
       </div>
     </div>
   );
