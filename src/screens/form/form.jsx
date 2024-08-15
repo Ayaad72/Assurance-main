@@ -192,14 +192,14 @@ const LoanApplicationForm = () => {
             <div className="flex items-center w-full">
               <div
                 className={`w-8 h-8 shrink-0 p-1.5 flex items-center justify-center rounded-full ${
-                  currentSection >= 1 ? "bg-red-700" : "bg-red-700"
+                  currentSection >= 1 ? "bg-gray-700" : "bg-red-700"
                 }`}
               >
                 <span className="text-base text-white font-bold">1</span>
               </div>
               <div
                 className={`w-full h-1 mx-4 rounded-lg ${
-                  currentSection >= 1 ? "bg-red-700" : "bg-red-300"
+                  currentSection >= 1 ? "bg-gray-700" : "bg-red-300"
                 }`}
               ></div>
             </div>
@@ -215,10 +215,10 @@ const LoanApplicationForm = () => {
               <div
                 className={`w-8 h-8 shrink-0 p-1.5 flex items-center justify-center rounded-full ${
                   currentSection >= 2
-                    ? "bg-red-700"
+                    ? "bg-gray-700"
                     : currentSection === 1
-                    ? "bg-red-500"
-                    : "bg-red-300"
+                    ? "bg-gray-500"
+                    : "bg-gray-300"
                 }`}
               >
                 <span className="text-base text-white font-bold">2</span>

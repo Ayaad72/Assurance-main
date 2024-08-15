@@ -263,52 +263,157 @@ const FinancialSolutions = () => {
       <br />
 
       {/* Testimonials Section */}
-      <section className="font-sans py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="text-3xl md:text-4xl text-blue-900 font-bold mb-8"
-          >
-            What Our Clients Say
-          </motion.h2>
+  <div class="lg:p-12 p-6 font-[sans-serif] bg-blue-50">
+      <div class="max-w-6xl max-md:max-w-lg mx-auto">
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="col-span-2">
+            <h2 class="text-gray-800 text-2xl font-extrabold">What our happy client say</h2>
+            <p class="text-sm text-gray-800 mt-4 leading-relaxed">Veniam proident aute magna anim excepteur et ex consectetur velit ullamco veniam minim aute sit. Elit occaecat officia et laboris Lorem minim. Officia do aliqua adipisicing ullamco in.</p>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="bg-white p-6 md:p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="flex items-center mb-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 md:w-16 md:h-16 rounded-full mr-4"
-                  />
-                  <div>
-                    <h4 className="text-lg md:text-xl font-semibold text-gray-800">
-                      {testimonial.name}
-                    </h4>
-                    <div className="text-yellow-500 flex">
-                      {Array(testimonial.rating)
-                        .fill(0)
-                        .map((_, i) => (
-                          <span key={i}>⭐</span>
-                        ))}
-                    </div>
-                  </div>
-                </div>
-                <p className="text-gray-700">{testimonial.feedback}</p>
-              </motion.div>
-            ))}
+          <div class="flex space-x-4 items-end justify-end">
+            <div class="bg-white w-10 h-10 grid items-center justify-center rounded-full rotate-90 shrink-0 cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-[#333] inline" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z" clip-rule="evenodd" data-original="#000000"></path>
+              </svg>
+            </div>
+            <div class="bg-[#333] w-10 h-10 grid items-center justify-center rounded-full -rotate-90 shrink-0 cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-[#fff] inline" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z" clip-rule="evenodd" data-original="#000000"></path>
+              </svg>
+            </div>
           </div>
         </div>
-      </section>
+
+        <div class="grid md:grid-cols-3 gap-6 mt-12">
+          <div class="p-6 rounded-lg bg-white shadow-md">
+            <div class="flex items-center">
+              <img src="https://readymadeui.com/profile_2.webp" class="w-10 h-10 rounded-full" />
+              <div class="ml-4">
+                <h4 class="text-gray-800 text-sm font-extrabold">John Doe</h4>
+                <p class="mt-0.5 text-xs text-gray-400">Founder of Rubik</p>
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <p class="text-gray-800 text-sm leading-relaxed">The service was amazing. I never had to wait that long for my food. The staff was friendly and attentive, and the delivery was impressively prompt.</p>
+            </div>
+
+            <div class="flex space-x-1 mt-4">
+              <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-[#CED5D8]" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-[#CED5D8]" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-lg bg-white shadow-md">
+            <div class="flex items-center">
+              <img src="https://readymadeui.com/profile_3.webp" class="w-10 h-10 rounded-full" />
+              <div class="ml-4">
+                <h4 class="text-gray-800 text-sm font-extrabold">Mark Adair</h4>
+                <p class="mt-0.5 text-xs text-gray-400">Founder of Alpha</p>
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <p class="text-gray-800 text-sm leading-relaxed">The service was amazing. I never had to wait that long for my food. The staff was friendly and attentive, and the delivery was impressively prompt.</p>
+            </div>
+
+            <div class="flex space-x-1 mt-4">
+              <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-lg bg-white shadow-md">
+            <div class="flex items-center">
+              <img src="https://readymadeui.com/profile_4.webp" class="w-10 h-10 rounded-full" />
+              <div class="ml-4">
+                <h4 class="text-gray-800 text-sm font-extrabold">Simon Konecki</h4>
+                <p class="mt-0.5 text-xs text-gray-400">Founder of Labar</p>
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <p class="text-gray-800 text-sm leading-relaxed">The service was amazing. I never had to wait that long for my food. The staff was friendly and attentive, and the delivery was impressively prompt.</p>
+            </div>
+
+            <div class="flex space-x-1 mt-4">
+              <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-[#facc15]" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-[#CED5D8]" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     </>
   );
 };

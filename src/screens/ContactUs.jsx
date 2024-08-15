@@ -117,7 +117,7 @@ const ContactUs = () => {
             <span className="font-bold">Email:</span>{" "}
             <a
               href="mailto:contact@yourcompany.com"
-              className="text-blue-600 hover:underline transition duration-150"
+              className="text-red-600 hover:underline transition duration-150"
             >
               contact@yourcompany.com
             </a>
@@ -126,7 +126,7 @@ const ContactUs = () => {
             <span className="font-bold">Phone:</span>{" "}
             <a
               href="tel:+1234567890"
-              className="text-blue-600 hover:underline transition duration-150"
+              className="text-red-600 hover:underline transition duration-150"
             >
               +1 (234) 567-890
             </a>

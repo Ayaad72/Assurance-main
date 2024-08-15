@@ -8,6 +8,7 @@ import {
   FaChartLine,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const cardData = [
   {
@@ -19,7 +20,7 @@ const cardData = [
     details:
       "Take advantage of your home's equity to achieve your financial goals, whether it's renovating, consolidating debt, or managing large expenses. Home equity solutions often offer lower interest rates, making it a cost-effective way to borrow.",
     image:
-      "https://www.lakelandbank.com/assets/1580763229-Blog5ReasonstoTapintoYourHomesEquity.jpg",
+      "https://moneyfcu.org/wp-content/uploads/2021/01/homeequity.png",
   },
   {
     id: 2,
@@ -30,7 +31,7 @@ const cardData = [
     details:
       "Refinancing your mortgage can save you money by lowering your interest rate, reducing your monthly payments, or even shortening your loan term. Discover the best refinancing options tailored to your needs.",
     image:
-      "https://www.newsweek.com/vault/wp-content/smush-webp/2024/06/GettyImages-1465749870-scaled.jpg.webp",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBD-2fO7ttyHUnjnNlva3e5B591U3VV9jhGw&s",
   },
   {
     id: 3,
@@ -41,7 +42,7 @@ const cardData = [
     details:
       "Personal loans can be a great option for consolidating debt, financing large purchases, or covering unexpected expenses. Compare offers from top lenders and choose the loan that best fits your budget.",
     image:
-      "https://image.cnbcfm.com/api/v1/image/105734279-1549988182058gettyimages-1093540812.jpeg?v=1549988196",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbStFziUbDEQxoeqV_h4qlX10yhwvVNwjpcxKKGz0uHj1gSMpipsfxb9w9bWr1-8Baj_I&usqp=CAU",
   },
   {
     id: 4,
@@ -52,7 +53,7 @@ const cardData = [
     details:
       "From home and auto to life and health, insurance is a critical part of financial security. Compare options to find the right coverage at a price that works for you.",
     image:
-      "https://uploads-ssl.webflow.com/605a87e8b657cac578d31049/605a87e8b657cac50ed311a6_How%20to%20Find%20the%20Accumulated%20Cash%20Value%20of%20Your%20Life%20Insurance%20Policy-sm.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwf7bAItWTSGGJIIbBNb065aY4ctig0_9WdA&s",
   },
   {
     id: 5,
@@ -74,7 +75,7 @@ const cardData = [
     details:
       "Student loans can help you cover the cost of tuition, books, and living expenses while you pursue your degree. Find the right loan option to support your educational journey.",
     image:
-      "https://bestfinancefactory.com/wp-content/uploads/2023/08/Student-Loans.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm4mGxid8E6iY5dMjewnErp2nAzvg1leNFaA&s",
   },
   {
     id: 7,
@@ -85,7 +86,7 @@ const cardData = [
     details:
       "If you're dealing with tax problems, finding the right tax relief service can help you negotiate with the IRS, reduce your debt, and avoid penalties. Learn about your options for tax relief and take control of your financial situation.",
     image:
-      "https://www.money-cash-hos.com/wp-content/uploads/2023/03/Image1-1400x850.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVO5atfnganvoaZ4cTaH6JHtyLCJgQCBP2dxGXLA29CBdanuZxNeo9TwxAPXc6Jy8klm4&usqp=CAU",
   },
 ];
 
@@ -106,7 +107,9 @@ const HomeEquityComponent = () => {
             key={card.id}
             onClick={() => setSelectedCard(card)}
             className={`flex flex-col items-center m-2 p-4 rounded-lg border w-28 h-28 ${
-              selectedCard.id === card.id ? "bg-gray-300 text-white" : "bg-gr"
+              selectedCard.id === card.id
+                ? "bg-[#d70040] text-white"
+                : "bg-gray-100"
             } transition duration-300 ease-in-out transform hover:scale-105`}
           >
             <div
@@ -121,16 +124,28 @@ const HomeEquityComponent = () => {
         ))}
       </div>
 
-      <div className="w-full max-w-3xl h-[760px] p-6 bg-white rounded-lg shadow-lg">
+      <motion.div
+        key={selectedCard.id}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 50 }}
+        transition={{ duration: 0.5 }}
+        className="w-full max-w-3xl p-6 bg-white rounded-lg shadow-lg"
+      >
         <h2 className="text-xl text-red-700 font-semibold mb-2">
           {selectedCard.name}
         </h2>
         <p className="text-gray-600 mb-4">{selectedCard.description}</p>
-        <img
-          src={selectedCard.image}
-          alt={selectedCard.name}
-          className="w-full h-65 object-cover rounded-lg mb-4"
-        />
+        <motion.img
+  key={selectedCard.image}
+  src={selectedCard.image}
+  alt={selectedCard.name}
+  initial={{ scale: 0.8, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{ duration: 0.5 }}
+  className="w-full h-48 object-contain rounded-lg mb-4"
+/>
+
         <p className="text-gray-700 mb-4">{selectedCard.details}</p>
         <div className="flex justify-center mt-4 space-x-2">
           <Link to="/Form">
@@ -142,7 +157,7 @@ const HomeEquityComponent = () => {
             Learn More
           </button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
