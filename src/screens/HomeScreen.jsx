@@ -98,14 +98,14 @@ const HomeScreen = () => {
       <div className="font-sans max-w-[80rem] max-md:max-w-md mx-auto">
         <div className="grid md:grid-cols-2 items-center md:gap-8 gap-6">
           <motion.div
-            className="max-md:order-1 max-md:text-center z-50 relative"
+            className="order-1 md:order-1 text-center md:text-left z-50 relative"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-gray-800 lg:text-6xl md:text-5xl text-3xl font-extrabold mb-4 md:!leading-[56px]">
               <span className="text-red-700">Assuring</span> Your Future
-              <span className="text-red-700">and Financial Success</span>
+              <span className="text-red-700"> and Financial Success</span>
             </h2>
             <p className="text-gray-700 mt-6 text-base leading-relaxed px-4 md:px-0">
               At Assurance Partners LLC, we guide you through every step of your
@@ -138,14 +138,14 @@ const HomeScreen = () => {
           </motion.div>
 
           <motion.div
-            className="lg:h-[550px] w-full md:h-[550px] flex items-center relative max-md:before:hidden before:absolute before:h-[120%] before:w-[120%] before:right-0 before:z-0 z-10"
+            className="lg:h-[550px] w-full md:h-[550px] flex items-center justify-center relative"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
             <img
               src={slides[currentIndex].image}
-              className="rounded-md w-full h-auto mt-8 max-w-full max-h-full object-cover relative z-20"
+              className="rounded-md w-full h-auto max-w-full max-h-full object-cover relative z-20"
               alt={slides[currentIndex].title}
             />
           </motion.div>
@@ -178,7 +178,7 @@ const HomeScreen = () => {
 
         {/* Service Section */}
         <motion.div
-          className="grid md:grid-cols-3 gap-8 z-50 relative px-4 max-md:mt-12 mb-12"
+          className="grid md:grid-cols-3 gap-8 z-50 relative px-4 max-md:mt-12 mb-12 max-sm:grid-cols-1 max-sm:gap-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -186,7 +186,7 @@ const HomeScreen = () => {
           {serviceItems.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-gray-200 p-8 shadow-lg rounded-lg transition-all duration-300 transform hover:scale-105 group hover:bg-blue-100 max-sm:mx-2"
+              className="bg-gray-200 p-8 shadow-lg rounded-lg transition-all duration-300 transform hover:scale-105 group hover:bg-blue-100 max-sm:p-4"
               initial={{ scale: 1 }}
               whileHover={{ scale: 1.05 }}
             >
@@ -205,7 +205,7 @@ const HomeScreen = () => {
 
         {/* Percentage Section */}
         <motion.div
-          className="p-8"
+          className="p-8 max-sm:px-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2 }}
@@ -221,7 +221,7 @@ const HomeScreen = () => {
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-sm:gap-4">
             <Percentage
               title="Mortgage"
               apr="7.47"
@@ -238,26 +238,24 @@ const HomeScreen = () => {
             />
             <Percentage
               title="Personal Loans"
-              apr="6.99"
-              term="3 YEAR"
+              apr="11.25"
+              term="3 YEAR FIXED"
               amount="20,000"
-              color="border-blue-700"
-            />
-            <Percentage
-              title="HELOC"
-              apr="6.88"
-              term="30 YEAR FIXED"
-              amount="50,000"
               color="border-red-700"
             />
+            <Percentage
+              title="Home Equity"
+              apr="8.50"
+              term="10 YEAR FIXED"
+              amount="200,000"
+              color="border-gray-700"
+            />
           </div>
-          <br />
-          <br />
         </motion.div>
 
+        {/* Video Component */}
         <Video />
       </div>
-      <br />
     </>
   );
 };
