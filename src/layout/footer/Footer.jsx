@@ -1,14 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { BsFacebook } from "react-icons/bs";
-import { IoMdArrowDropright } from "react-icons/io";
-import {
-  AiFillTwitterCircle,
-  AiFillLinkedin,
-  AiFillInstagram,
-  AiFillGoogleCircle,
-} from "react-icons/ai";
-
 const Footer = () => {
   const select = (el, all = false) => {
     el = el.trim();
@@ -41,7 +31,6 @@ const Footer = () => {
       <footer class="bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 py-10 px-10 font-sans tracking-wide">
         <div class="max-w-2xl mx-auto text-center">
           <a href="javascript:void(0)" class="inline-block">
-            {" "}
             <h2 style={{ fontSize: "30px", color: "white", fontWeight: "600" }}>
               Assurance Partners LLC
             </h2>
@@ -50,7 +39,10 @@ const Footer = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
             gravida, mi eu pulvinar cursus, sem elit interdum mauris dipiscing
             elit. Aenean gravida, mi eu pulvinar cursus.{" "}
-            <a href="javascript:void(0)" class="text-sm font-semibold text-red">
+            <a
+              href="javascript:void(0)"
+              class="text-sm font-semibold text-red-700"
+            >
               Read more...
             </a>
           </p>
@@ -257,7 +249,7 @@ const Footer = () => {
             <li class="text-sm">
               <a
                 href="javascript:void(0)"
-                class="text-red-600 font-semibold hover:underline"
+                class="text-red-700 font-semibold hover:underline"
               >
                 Terms of Service
               </a>
@@ -265,7 +257,7 @@ const Footer = () => {
             <li class="text-sm">
               <a
                 href="javascript:void(0)"
-                class="text-red-600 font-semibold hover:underline"
+                class="text-red-700 font-semibold hover:underline"
               >
                 Privacy Policy
               </a>
@@ -273,7 +265,7 @@ const Footer = () => {
             <li class="text-sm">
               <a
                 href="javascript:void(0)"
-                class="text-red-600 font-semibold hover:underline"
+                class="text-red-700 font-semibold hover:underline"
               >
                 Security
               </a>

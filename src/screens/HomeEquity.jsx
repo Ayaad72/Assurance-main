@@ -94,7 +94,9 @@ const HomeEquityComponent = () => {
 
   return (
     <div className="bg-slate-50 font-sans flex flex-col items-center p-4 min-h-screen">
-      <h1 className="text-3xl text-red-600 font-bold mb-4">When banks compete, you win.</h1>
+      <h1 className="text-3xl text-red-700 font-bold mb-4">
+        When banks compete, you win.
+      </h1>
       <p className="text-lg mb-8 text-gray-600">
         Explore financial solutions tailored to your needs.
       </p>
@@ -109,20 +111,20 @@ const HomeEquityComponent = () => {
           >
             <div
               className={`text-4xl mb-2 ${
-                selectedCard.id === card.id ? "text-white" : "text-red-600"
+                selectedCard.id === card.id ? "text-white" : "text-red-700"
               } transition duration-300 ease-in-out`}
             >
               {card.icon}
             </div>
-            <div className="text-sm font-semibold text-center">
-              {card.name}
-            </div>
+            <div className="text-sm font-semibold text-center">{card.name}</div>
           </button>
         ))}
       </div>
 
       <div className="w-full max-w-3xl h-[760px] p-6 bg-white rounded-lg shadow-lg">
-        <h2 className="text-xl text-red-600 font-semibold mb-2">{selectedCard.name}</h2>
+        <h2 className="text-xl text-red-700 font-semibold mb-2">
+          {selectedCard.name}
+        </h2>
         <p className="text-gray-600 mb-4">{selectedCard.description}</p>
         <img
           src={selectedCard.image}
@@ -136,7 +138,7 @@ const HomeEquityComponent = () => {
               Compare Rates
             </button>
           </Link>
-          <button className="border border-red-600 text-red-600 py-2 px-4 rounded-lg">
+          <button className="border border-red-600 text-red-700 py-2 px-4 rounded-lg">
             Learn More
           </button>
         </div>

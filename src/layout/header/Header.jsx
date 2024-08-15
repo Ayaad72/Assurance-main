@@ -18,40 +18,40 @@ const Header = () => {
           <img src={logo} alt="logo" className="w-48" />
         </Link>
 
-        <nav className="hidden lg:flex gap-x-5">
+        <nav className="hidden lg:flex gap-x-5 text-[19px]">
           <Link
             to="/aboutus"
-            className="hover:text-[red] text-gray-500 block font-semibold text-[15px]"
+            className="hover:text-red-700 text-gray-500 block font-semibold "
           >
             About Us
           </Link>
           <Link
             to="/HomeEquity"
-            className="hover:text-[red] text-gray-500 block font-semibold text-[15px]"
+            className="hover:text-red-700 text-gray-500 block font-semibold "
           >
             Services
           </Link>
           <Link
             to="/FinancialSolutions"
-            className="hover:text-[red] text-gray-500 block font-semibold text-[15px]"
+            className="hover:text-red-700 text-gray-500 block font-semibold "
           >
             Financial Solutions
           </Link>
           <Link
             to="/contactus"
-            className="hover:text-[red] text-gray-500 block font-semibold text-[15px]"
+            className="hover:text-red-700 text-gray-500 block font-semibold "
           >
             Contact Us
           </Link>
         </nav>
 
         <div className="flex max-lg:ml-auto space-x-3">
-          <button className="px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-[red] bg-[red] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[red]">
+          {/* <button className="px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-[red] bg-[red] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-red-700">
             Login
-          </button>
-          <button className="px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-[red] bg-[red] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-[red]">
+          </button> */}
+          {/* <button className="px-4 py-2 text-sm rounded-full font-bold text-white border-2 border-[red] bg-[red] transition-all ease-in-out duration-300 hover:bg-transparent hover:text-red-700">
             Sign up
-          </button>
+          </button> */}
 
           <button
             id="toggleOpen"
@@ -78,7 +78,7 @@ const Header = () => {
               <li className="border-b border-gray-300 py-3 px-3">
                 <Link
                   to="/aboutus"
-                  className="hover:text-[red] text-gray-500 block font-semibold text-[15px]"
+                  className="hover:text-red-700 text-gray-500 block font-semibold "
                 >
                   About Us
                 </Link>
@@ -86,7 +86,7 @@ const Header = () => {
               <li className="border-b border-gray-300 py-3 px-3">
                 <Link
                   to="/HomeEquity"
-                  className="hover:text-[red] text-gray-500 block font-semibold text-[15px]"
+                  className="hover:text-red-700 text-gray-500 block font-semibold "
                 >
                   Services
                 </Link>
@@ -94,7 +94,7 @@ const Header = () => {
               <li className="border-b border-gray-300 py-3 px-3">
                 <Link
                   to="/FinancialSolutions"
-                  className="hover:text-[red] text-gray-500 block font-semibold text-[15px]"
+                  className="hover:text-red-700 text-gray-500 block font-semibold "
                 >
                   Financial Solutions
                 </Link>
@@ -102,7 +102,7 @@ const Header = () => {
               <li className="border-b border-gray-300 py-3 px-3">
                 <Link
                   to="/contactus"
-                  className="hover:text-[red] text-gray-500 block font-semibold text-[15px]"
+                  className="hover:text-red-700 text-gray-500 block font-semibold "
                 >
                   Contact Us
                 </Link>
