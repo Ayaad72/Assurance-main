@@ -1,0 +1,60 @@
+/* Header.css */
+
+/* Hamburger button bars */
+.hamburger-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30px;
+  height: 54px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background: black;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
+/* Transform hamburger into cross */
+.hamburger-button.open .bar:nth-child(1) {
+  transform: rotate(45deg);
+  margin: 0;
+}
+
+.hamburger-button.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-button.open .bar:nth-child(3) {
+  transform: rotate(-45deg);
+  margin: 0;
+}
+
+/* Menu transition */
+.menu-slide-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.menu-slide-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.menu-slide-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-slide-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms, transform 300ms;
+}
