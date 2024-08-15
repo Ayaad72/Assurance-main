@@ -199,11 +199,11 @@ const LoanApplicationForm = () => {
               </div>
               <div
                 className={`w-full h-1 mx-4 rounded-lg ${
-<<<<<<< HEAD
-                  currentSection >= 1 ? "bg-gray-700" : "bg-red-300"
-=======
+
+                  currentSection >= 1 ? "bg-gray-700" : "bg-red-300",
+
                   currentSection >= 1 ? "bg-red-700" : "bg-gray-300"
->>>>>>> 9f070d51d2bd497a9383cecccf210e336fede15d
+
                 }`}
               ></div>
             </div>
@@ -215,32 +215,29 @@ const LoanApplicationForm = () => {
           </div>
 
           <div className="w-full">
-            <div className="flex items-center w-full">
-              <div
-                className={`w-8 h-8 shrink-0 p-1.5 flex items-center justify-center rounded-full ${
-                  currentSection >= 2
-                    ? "bg-gray-700"
-                    : currentSection === 1
-<<<<<<< HEAD
-                    ? "bg-gray-500"
-=======
-                    ? "bg-gray-300"
->>>>>>> 9f070d51d2bd497a9383cecccf210e336fede15d
-                    : "bg-gray-300"
-                }`}
-              >
-                <span className="text-base text-white font-bold">2</span>
-              </div>
-              <div
-                className={`w-full h-1 mx-4 rounded-lg ${
-                  currentSection >= 2 ? "bg-red-700" : "bg-gray-300"
-                }`}
-              ></div>
-            </div>
-            <div className="mt-2">
-              <h6 className="text-base font-bold text-red-700">Loan Info</h6>
-            </div>
-          </div>
+  <div className="flex items-center w-full">
+    <div
+      className={`w-8 h-8 shrink-0 p-1.5 flex items-center justify-center rounded-full ${
+        currentSection >= 2
+          ? "bg-gray-700"
+          : currentSection === 1
+          ? "bg-gray-500"
+          : "bg-gray-300"
+      }`}
+    >
+      <span className="text-base text-white font-bold">2</span>
+    </div>
+    <div
+      className={`w-full h-1 mx-4 rounded-lg ${
+        currentSection >= 2 ? "bg-red-700" : "bg-gray-300"
+      }`}
+    ></div>
+  </div>
+  <div className="mt-2">
+    <h6 className="text-base font-bold text-red-700">Loan Info</h6>
+  </div>
+</div>
+
 
           <div className="w-full">
             <div className="flex items-center w-full">
@@ -905,7 +902,7 @@ export default LoanApplicationForm;
 //               <div
 //                 className={`w-8 h-8 shrink-0 p-1.5 flex items-center justify-center rounded-full ${
 //                   currentSection >= 2
-//                     ? "bg-green-500"
+                    // ? "bg-green-500"
 //                     : currentSection === 1
 //                     ? "bg-gray-500"
 //                     : "bg-gray-300"
