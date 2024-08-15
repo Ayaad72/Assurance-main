@@ -118,7 +118,7 @@ const HomeScreen = () => {
 
             <button
               type="button"
-              className="mt-6 bg-red-600 hover:bg-gray-400 hover:text-black-600 border-2 border-black-600 transition-all text-white font-semibold text-sm tracking-wide rounded-md px-6 py-2.5"
+              className="mt-6 bg-transparent hover:bg-red-500 hover:text-white border-2 border-red-600 transition-all text-red-600 font-semibold text-sm tracking-wide rounded-md px-6 py-2.5"
               onClick={handleSubmit}
               disabled={isLoading}
             >
@@ -150,8 +150,6 @@ const HomeScreen = () => {
             />
           </motion.div>
         </div>
-        <br />
-        <br />
 
         {/* Marquee Section */}
         <motion.div
@@ -177,13 +175,10 @@ const HomeScreen = () => {
           </div>
         </motion.div>
         <br />
-        <br />
-        <br />
-        <br />
 
         {/* Service Section */}
         <motion.div
-          className="grid md:grid-cols-3 gap-8 z-50 relative md:px-4 max-md:mt-12 mb-12"
+          className="grid md:grid-cols-3 gap-8 z-50 relative px-4 max-md:mt-12 mb-12"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -191,7 +186,7 @@ const HomeScreen = () => {
           {serviceItems.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-gray-200 p-8 shadow-lg rounded-lg transition-all duration-300 transform hover:scale-105 group hover:bg-blue-100"
+              className="bg-gray-200 p-8 shadow-lg rounded-lg transition-all duration-300 transform hover:scale-105 group hover:bg-blue-100 max-sm:mx-2"
               initial={{ scale: 1 }}
               whileHover={{ scale: 1.05 }}
             >
@@ -207,8 +202,6 @@ const HomeScreen = () => {
             </motion.div>
           ))}
         </motion.div>
-        <br />
-        <br />
 
         {/* Percentage Section */}
         <motion.div

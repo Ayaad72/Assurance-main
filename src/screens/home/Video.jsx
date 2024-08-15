@@ -11,11 +11,11 @@ document.head.appendChild(googleFontLink);
 function Video() {
   return (
     <div
-      className="flex flex-col lg:flex-row h-screen bg-gray-50"
+      className="flex flex-col lg:flex-row h-screen "
       style={{ fontFamily: "Poppins, sans-serif" }}
     >
       {/* Left Side - Video Section */}
-      <div className="w-full lg:w-1/2 flex justify-center items-center bg-[#e2eeea] p-4 lg:p-0">
+      <div className="w-full lg:w-1/2 flex justify-center items-center  p-4 lg:p-0">
         <motion.div
           className="w-full lg:w-[90%] h-[50vh] lg:h-[90%] shadow-xl rounded-xl overflow-hidden"
           initial={{ opacity: 0, x: -100 }}
