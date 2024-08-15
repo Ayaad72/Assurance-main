@@ -93,62 +93,61 @@ const HomeScreen = () => {
   return (
     <>
       <div className="font-sans max-w-[80rem] max-md:max-w-md mx-auto">
-      <div className="grid md:grid-cols-2 items-center md:gap-8 gap-6">
-  {/* Text Section (Left) */}
-  <motion.div
-    className="order-1 md:order-1 text-center md:text-left z-50 relative"
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-  >
-    <h2 className="text-gray-800 lg:text-6xl md:text-5xl text-3xl font-extrabold mb-4 md:!leading-[56px]">
-      <span className="text-red-700">Assuring</span> Your Future
-      <span className="text-red-700"> and Financial Success</span>
-    </h2>
-    <p className="text-gray-700 mt-6 text-base leading-relaxed px-4 md:px-0">
-      At Assurance Partners LLC, we guide you through every step of your
-      financial journey. Whether you're planning for retirement,
-      investing, or seeking comprehensive solutions, our expert team is
-      here to ensure your goals are achieved with precision and care.
-      Trust us to navigate the complexities of financial planning, so
-      you can enjoy a secure and prosperous future.
-    </p>
-    <button
-      type="button"
-      className="mt-6 bg-transparent hover:bg-red-700 hover:text-white border-2 border-red-700 transition-all text-red-700 font-semibold text-sm tracking-wide rounded-md px-6 py-2.5"
-      onClick={handleSubmit}
-      disabled={isLoading}
-    >
-      {isLoading ? "Sending..." : "Get Started"}
-    </button>
+        <div className="grid md:grid-cols-2 items-center md:gap-8 gap-6">
+          {/* Text Section (Left) */}
+          <motion.div
+            className="order-1 md:order-1 text-center md:text-left  relative"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-gray-800 lg:text-6xl md:text-5xl text-3xl font-extrabold mb-4 md:!leading-[56px]">
+              <span className="text-red-700">Assuring</span> Your Future
+              <span className="text-red-700"> and Financial Success</span>
+            </h2>
+            <p className="text-gray-700 mt-6 text-base leading-relaxed px-4 md:px-0">
+              At Assurance Partners LLC, we guide you through every step of your
+              financial journey. Whether you're planning for retirement,
+              investing, or seeking comprehensive solutions, our expert team is
+              here to ensure your goals are achieved with precision and care.
+              Trust us to navigate the complexities of financial planning, so
+              you can enjoy a secure and prosperous future.
+            </p>
+            <button
+              type="button"
+              className="mt-6 bg-transparent hover:bg-red-700 hover:text-white border-2 border-red-700 transition-all text-red-700 font-semibold text-sm tracking-wide rounded-md px-6 py-2.5"
+              onClick={handleSubmit}
+              disabled={isLoading}
+            >
+              {isLoading ? "Sending..." : "Get Started"}
+            </button>
 
-    {isSuccess && (
-      <p className="text-green-700 mt-2">
-        Loan request sent successfully!
-      </p>
-    )}
-    {error && (
-      <p className="text-red-700 mt-2">
-        Failed to send loan request. Please try again.
-      </p>
-    )}
-  </motion.div>
+            {isSuccess && (
+              <p className="text-green-700 mt-2">
+                Loan request sent successfully!
+              </p>
+            )}
+            {error && (
+              <p className="text-red-700 mt-2">
+                Failed to send loan request. Please try again.
+              </p>
+            )}
+          </motion.div>
 
-  {/* Image Section (Right) */}
-  <motion.div
-    className="lg:h-[550px] w-full md:h-[550px] flex items-center justify-center relative order-2 md:order-2"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ duration: 1 }}
-  >
-    <img
-      src={slides[currentIndex].image}
-      className="rounded-md w-full h-auto mt-8 max-w-full max-h-full object-cover relative z-20"
-      alt={slides[currentIndex].title}
-    />
-  </motion.div>
-</div>
-
+          {/* Image Section (Right) */}
+          <motion.div
+            className="lg:h-[550px] w-full md:h-[550px] flex items-center justify-center relative order-2 md:order-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <img
+              src={slides[currentIndex].image}
+              className="rounded-md w-full h-auto mt-8 max-w-full max-h-full object-cover relative "
+              alt={slides[currentIndex].title}
+            />
+          </motion.div>
+        </div>
 
         {/* Marquee Section */}
         <motion.div
@@ -177,7 +176,7 @@ const HomeScreen = () => {
 
         {/* Service Section */}
         <motion.div
-          className="grid md:grid-cols-3 gap-8 z-50 relative px-4 max-md:mt-12 mb-12 max-sm:grid-cols-1 max-sm:gap-4"
+          className="grid md:grid-cols-3 gap-8  relative px-4 max-md:mt-12 mb-12 max-sm:grid-cols-1 max-sm:gap-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}

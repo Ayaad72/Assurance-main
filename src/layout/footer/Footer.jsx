@@ -4,7 +4,9 @@ const Footer = () => {
   useEffect(() => {
     const select = (el, all = false) => {
       el = el.trim();
-      return all ? [...document.querySelectorAll(el)] : document.querySelector(el);
+      return all
+        ? [...document.querySelectorAll(el)]
+        : document.querySelector(el);
     };
 
     const backtotop = select(".back-to-top");
@@ -41,8 +43,13 @@ const Footer = () => {
           </h2>
         </a>
         <p className="text-sm mt-8 text-gray-200">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida, mi eu pulvinar cursus, sem elit interdum mauris dipiscing elit. Aenean gravida, mi eu pulvinar cursus.{" "}
-          <a href="javascript:void(0)" className="text-sm font-semibold text-red-700">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+          gravida, mi eu pulvinar cursus, sem elit interdum mauris dipiscing
+          elit. Aenean gravida, mi eu pulvinar cursus.{" "}
+          <a
+            href="javascript:void(0)"
+            className="text-sm font-semibold text-red-700"
+          >
             Read more...
           </a>
         </p>
@@ -50,7 +57,11 @@ const Footer = () => {
         <ul className="flex items-center justify-center flex-wrap gap-y-3 gap-x-6 mt-8">
           <li>
             <a href="javascript:void(0)">
-              <svg xmlns="http://www.w3.org/2000/svg" className="inline w-6 h-6" viewBox="0 0 512 512">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="inline w-6 h-6"
+                viewBox="0 0 512 512"
+              >
                 <path
                   fill="#1877f2"
                   d="M512 256c0 127.78-93.62 233.69-216 252.89V330h59.65L367 256h-71v-48.02c0-20.25 9.92-39.98 41.72-39.98H370v-63s-29.3-5-57.31-5c-58.47 0-96.69 35.44-96.69 99.6V256h-65v74h65v178.89C93.62 489.69 0 383.78 0 256 0 114.62 114.62 0 256 0s256 114.62 256 256z"
@@ -67,9 +78,19 @@ const Footer = () => {
 
           <li>
             <a href="javascript:void(0)">
-              <svg xmlns="http://www.w3.org/2000/svg" className="inline w-6 h-6" viewBox="0 0 176 176">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="inline w-6 h-6"
+                viewBox="0 0 176 176"
+              >
                 <g data-name="Layer 2">
-                  <rect width="176" height="176" fill="#0077b5" rx="24" aria-label="LinkedIn" />
+                  <rect
+                    width="176"
+                    height="176"
+                    fill="#0077b5"
+                    rx="24"
+                    aria-label="LinkedIn"
+                  />
                   <path
                     fill="#fff"
                     d="M63.4 48a15 15 0 1 1-15-15 15 15 0 0 1 15 15zM60 73v66.27a3.71 3.71 0 0 1-3.71 3.73H40.48a3.71 3.71 0 0 1-3.72-3.72V73a3.72 3.72 0 0 1 3.72-3.72h15.81A3.72 3.72 0 0 1 60 73zm82.64 34.5v32.08a3.41 3.41 0 0 1-3.42 3.42h-17a3.41 3.41 0 0 1-3.42-3.42v-31.09c0-4.64 1.36-20.32-12.13-20.32-10.45 0-12.58 10.73-13 15.55v35.86A3.42 3.42 0 0 1 90.3 143H73.88a3.41 3.41 0 0 1-3.41-3.42V72.71a3.41 3.41 0 0 1 3.41-3.42H90.3a3.42 3.42 0 0 1 3.42 3.42v5.78c3.88-5.82 9.63-10.31 21.9-10.31 27.18 0 27.02 25.38 27.02 39.32z"
@@ -82,7 +103,11 @@ const Footer = () => {
 
           <li>
             <a href="javascript:void(0)">
-              <svg xmlns="http://www.w3.org/2000/svg" className="inline w-6 h-6" viewBox="0 0 24 24">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="inline w-6 h-6"
+                viewBox="0 0 24 24"
+              >
                 <linearGradient
                   id="a"
                   x1="-37.106"
@@ -111,11 +136,20 @@ const Footer = () => {
           </li>
         </ul>
 
-        <p className="mt-10 text-gray-400 text-xs">© 2024 Assurance Partners LLC. All rights reserved.</p>
+        <p className="mt-10 text-gray-400 text-xs">
+          © 2024 Assurance Partners LLC. All rights reserved.
+        </p>
       </div>
 
-      <a href="javascript:void(0)" className="back-to-top bg-gray-900 text-white rounded-full p-2 fixed bottom-10 right-10 shadow-md transition-transform transform hover:scale-105">
-        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24">
+      <a
+        href="javascript:void(0)"
+        className="back-to-top bg-gray-900 text-white rounded-full p-2 fixed bottom-10 right-10 shadow-md transition-transform transform hover:scale-105"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-6 h-6"
+          viewBox="0 0 24 24"
+        >
           <path fill="none" d="M0 0h24v24H0z" />
           <path
             fill="currentColor"

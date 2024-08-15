@@ -19,8 +19,7 @@ const cardData = [
       "Unlock the value of your home to secure financing for big projects or to manage debt effectively. Home equity loans give you access to funds based on your property's worth.",
     details:
       "Take advantage of your home's equity to achieve your financial goals, whether it's renovating, consolidating debt, or managing large expenses. Home equity solutions often offer lower interest rates, making it a cost-effective way to borrow.",
-    image:
-      "https://moneyfcu.org/wp-content/uploads/2021/01/homeequity.png",
+    image: "https://moneyfcu.org/wp-content/uploads/2021/01/homeequity.png",
   },
   {
     id: 2,
@@ -95,10 +94,7 @@ const HomeEquityComponent = () => {
 
   return (
     <div className="bg-slate-50 font-sans flex flex-col items-center p-4 min-h-screen">
-      <h1 className="text-3xl text-red-700 font-bold mb-4">
-        When banks compete, you win.
-      </h1>
-      <p className="text-lg mb-8 text-gray-600">
+      <p className="text-3xl text-red-700 font-bold mb-4">
         Explore financial solutions tailored to your needs.
       </p>
       <div className="flex flex-wrap justify-center mb-6">
@@ -137,14 +133,14 @@ const HomeEquityComponent = () => {
         </h2>
         <p className="text-gray-600 mb-4">{selectedCard.description}</p>
         <motion.img
-  key={selectedCard.image}
-  src={selectedCard.image}
-  alt={selectedCard.name}
-  initial={{ scale: 0.8, opacity: 0 }}
-  animate={{ scale: 1, opacity: 1 }}
-  transition={{ duration: 0.5 }}
-  className="w-full h-48 object-contain rounded-lg mb-4"
-/>
+          key={selectedCard.image}
+          src={selectedCard.image}
+          alt={selectedCard.name}
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="w-full h-48 object-contain rounded-lg mb-4"
+        />
 
         <p className="text-gray-700 mb-4">{selectedCard.details}</p>
         <div className="flex justify-center mt-4 space-x-2">
