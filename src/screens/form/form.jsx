@@ -76,19 +76,21 @@ const LoanApplicationForm = () => {
       if (!formData.driversLicenseState) {
         errors.driversLicenseState = "Driver's License State should be filled.";
       }
-    } else if (currentSection === 1) {
-      if (!formData.requestedAmount) {
-        errors.requestedAmount = "Requested Amount should be filled.";
-      }
       if (!formData.loanPurpose) {
         errors.loanPurpose = "Loan Purpose should be filled .";
       }
-      if (!formData.monthsAtCompany) {
-        errors.monthsAtCompany =
-          "Months at Company should be filled before proceeding.";
+    } else if (currentSection === 1) {
+      if (!formData.annualIncome) {
+        errors.annualIncome = "Annual Income should be filled.";
       }
-      if (!formData.monthlyIncome) {
-        errors.monthlyIncome = "Monthly Income should be filled .";
+
+      if (!formData.timeWithEmployer) {
+        errors.timeWithEmployer =
+          "Time with employer should be filled before proceeding.";
+      }
+
+      if (!formData.requestedAmount) {
+        errors.requestedAmount = "Requested Amount should be filled .";
       }
       if (!formData.timeWithEmployer) {
         errors.monthlyIncome = "Time with employer should be filled .";
@@ -97,20 +99,23 @@ const LoanApplicationForm = () => {
         errors.employerName = "Employer Name should be filled .";
       }
       if (!formData.annualIncome) {
-        errors.annualIncome = "Time with employer should be filled .";
+        errors.annualIncome = "Annual income should be filled .";
       }
+      if (!formData.monthsAtCompany) {
+        errors.monthsAtCompany = "Months at Company should be filled";
+      }
+      // if (!formData.monthlyIncome) {
+      //   errors.monthlyIncome = "Monthly Income  should be filled";
+      // }
       if (!formData.payDate1) {
-        errors.payDate1 = "Pay Date 1 should be filled";
-      }
-      if (!formData.payFrequency) {
-        errors.payFrequency = "Pay frequency  should be filled";
+        errors.payDate1 = "Pay Date1  should be filled";
       }
     } else if (currentSection === 2) {
-      if (!formData.bankABA) {
-        errors.bankABA = "Bank ABA must be filled first.";
+      if (!formData.bankName) {
+        errors.bankName = "Bank Name must be filled first.";
       }
-      if (!formData.bankAccountNumber) {
-        errors.bankAccountNumber = "Bank Account Number should be filled.";
+      if (!formData.bankABA) {
+        errors.bankABA = "Bank ABA should be filled.";
       }
     }
 
@@ -284,7 +289,7 @@ const LoanApplicationForm = () => {
           </div>
         </div>
 
-        <form id="loanForm" onSubmit={handleSubmit}>
+        <form id="loanForm " onSubmit={handleSubmit}>
           {Object.keys(formErrors).length > 0 && (
             <div className="mb-4 p-4 bg-red-100 text-red-700 rounded-md">
               <p>{Object.values(formErrors)[0]}</p>
@@ -295,8 +300,8 @@ const LoanApplicationForm = () => {
               <legend className="text-lg text-gray-700 font-semibold mb-4 p-[10px] ">
                 Personal Information
               </legend>
+              {/* Personal Info Fields */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* Personal Info Fields */}
                 <div>
                   <label htmlFor="firstName" className="block mb-2">
                     First Name
@@ -311,7 +316,11 @@ const LoanApplicationForm = () => {
                     onChange={handleChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
+                  <small className="text-gray-600">
+                    Please enter your first name
+                  </small>
                 </div>
+
                 <div>
                   <label htmlFor="lastName" className="block mb-2">
                     Last Name
@@ -324,6 +333,9 @@ const LoanApplicationForm = () => {
                     onChange={handleChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
+                  <small className="text-gray-600">
+                    Please enter your last name
+                  </small>
                 </div>
                 <div>
                   <label className="block mb-2">Email</label>
@@ -445,6 +457,9 @@ const LoanApplicationForm = () => {
                     onChange={handleChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
+                  <small className="text-gray-600">
+                    Please enter your Driving License State
+                  </small>
                 </div>
               </div>
             </fieldset>
@@ -452,7 +467,7 @@ const LoanApplicationForm = () => {
           {/* Income Information Section */}
           {currentSection === 1 && (
             <fieldset className="form-section border border-gray-500 p-8 rounded-[10px]">
-              <legend className="text-lg text-red-700 font-semibold mb-4 p-[10px]">
+              <legend className="text-lg text-gray-700 font-semibold mb-4 p-[10px]">
                 Income Information
               </legend>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -562,6 +577,9 @@ const LoanApplicationForm = () => {
                     onChange={handleChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
+                  <small className="text-gray-600">
+                    Please enter your time with employer
+                  </small>
                 </div>
                 <div>
                   <label htmlFor="requestedAmount" className="block mb-2">
@@ -575,6 +593,9 @@ const LoanApplicationForm = () => {
                     onChange={handleChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
+                  <small className="text-gray-600">
+                    Please enter your Requested Amount
+                  </small>
                 </div>
                 <div>
                   <label htmlFor="credit" className="block mb-2">
@@ -595,7 +616,11 @@ const LoanApplicationForm = () => {
                     <option value="Verypoor">Very Poor</option>
                     <option value="Unsure">Unsure</option>
                   </select>
+                  <small className="text-gray-600">
+                    Please select your credit score
+                  </small>
                 </div>
+
                 <div>
                   <label htmlFor="ownHome" className="block mb-2">
                     Own Home
@@ -610,6 +635,7 @@ const LoanApplicationForm = () => {
                     <option value="true">Yes</option>
                     <option value="false">No</option>
                   </select>
+                  <small className="text-gray-600">Do you own a house?</small>
                 </div>
                 <div>
                   <label htmlFor="employerName" className="block mb-2">
@@ -623,6 +649,9 @@ const LoanApplicationForm = () => {
                     onChange={handleChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
+                  <small className="text-gray-600">
+                    Please enter Employer name
+                  </small>
                 </div>
                 <div>
                   <label htmlFor="monthsAtCompany" className="block mb-2">
@@ -636,6 +665,9 @@ const LoanApplicationForm = () => {
                     onChange={handleChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
+                  <small className="text-gray-600">
+                    Please enter months in company
+                  </small>
                 </div>
                 <div>
                   <label htmlFor="incomeType" className="block mb-2">
@@ -655,6 +687,9 @@ const LoanApplicationForm = () => {
                     <option value="retired">Retired</option>
                     <option value="unemployed">Unemployed</option>
                   </select>
+                  <small className="text-gray-600">
+                    Please select the income type
+                  </small>
                 </div>
                 <div>
                   <label htmlFor="monthlyIncome" className="block mb-2">
@@ -668,6 +703,9 @@ const LoanApplicationForm = () => {
                     onChange={handleChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
+                  <small className="text-gray-600">
+                    Please enter your Monthly Income
+                  </small>
                 </div>
                 <div>
                   <label htmlFor="payDate1" className="block mb-2">
@@ -681,6 +719,9 @@ const LoanApplicationForm = () => {
                     onChange={handleChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
+                  <small className="text-gray-600">
+                    Please enter your pay date
+                  </small>
                 </div>
                 <div>
                   <label htmlFor="payFrequency" className="block mb-2">
@@ -698,14 +739,17 @@ const LoanApplicationForm = () => {
                     <option value="Semimonthly">Semi-Monthly</option>
                     <option value="Monthly">Monthly</option>
                   </select>
+                  <small className="text-gray-600">
+                    Please select your pay frequency
+                  </small>
                 </div>
               </div>
             </fieldset>
           )}
           {/* payment details */}
           {currentSection === 2 && (
-            <fieldset className="form-section border border-red-500 p-8 rounded-[12px]">
-              <legend className="text-lg text-red-700 font-semibold mb-4 p-[10px]">
+            <fieldset className="form-section border border-gray-500 p-8 rounded-[12px]">
+              <legend className="text-lg text-gray-700 font-semibold mb-4 p-[10px]">
                 Payment Details
               </legend>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -760,6 +804,9 @@ const LoanApplicationForm = () => {
                     onChange={handleChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
+                  <small className="text-gray-600">
+                    Please enter your bank name
+                  </small>
                 </div>
                 {/* <div>
                   <label htmlFor="accountType" className="block mb-2">
@@ -793,6 +840,9 @@ const LoanApplicationForm = () => {
                     <option value="0">0</option>
                     <option value="No">No</option>
                   </select>
+                  <small className="text-gray-600">
+                    Please enter your first name
+                  </small>
                 </div>
                 <div>
                   <label htmlFor="bankAccountType" className="block mb-2">
@@ -809,7 +859,8 @@ const LoanApplicationForm = () => {
                     <option value="Checking">Checking</option>
                     <option value="Savings">Savings</option>
                   </select>
-                  <small>
+
+                  <small className="text-gray-600">
                     Bank Account Type should be 'checking' or 'savings'.
                   </small>
                 </div>
@@ -827,11 +878,12 @@ const LoanApplicationForm = () => {
                     required
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
+                  <small className="text-gray-600">
+                    please enter your Bank ABA
+                  </small>
                 </div>
                 <div>
-                  <label htmlFor="bankAccountNumber" className="block mb-2">
-                    Bank Account Number
-                  </label>
+                  <label className="block mb-2">Bank Account Number</label>
                   <input
                     type="number"
                     id="bankAccountNumber"
@@ -843,6 +895,9 @@ const LoanApplicationForm = () => {
                     required
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
+                  <small className="text-gray-600">
+                    please enter your Bank Account Number
+                  </small>
                 </div>
               </div>
             </fieldset>
