@@ -94,7 +94,7 @@ const HomeEquityComponent = () => {
 
   return (
     <div className="bg-slate-50 font-sans flex flex-col items-center p-4 min-h-screen">
-      <p className="text-3xl text-red-700 font-bold mb-4">
+      <p className="text-3xl text-main font-bold mb-4">
         Explore financial solutions tailored to your needs.
       </p>
       <div className="flex flex-wrap justify-center mb-6">
