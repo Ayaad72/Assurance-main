@@ -24,25 +24,25 @@ const Header = () => {
         <nav className="hidden lg:flex gap-x-5 text-[19px] ml-auto">
           <Link
             to="/aboutus"
-            className="hover:text-red-700 text-gray-500 block font-semibold"
+            className="hover:text-bardum text-gray-500 block font-semibold"
           >
             About Us
           </Link>
           <Link
             to="/HomeEquity"
-            className="hover:text-red-700 text-gray-500 block font-semibold"
+            className="hover:text-bardum text-gray-500 block font-semibold"
           >
             Services
           </Link>
           <Link
             to="/FinancialSolutions"
-            className="hover:text-red-700 text-gray-500 block font-semibold"
+            className="hover:text-bardum text-gray-500 block font-semibold"
           >
             Financial Solutions
           </Link>
           <Link
             to="/contactus"
-            className="hover:text-red-700 text-gray-500 block font-semibold"
+            className="hover:text-bardum text-gray-500 block font-semibold"
           >
             Contact Us
           </Link>
@@ -53,7 +53,7 @@ const Header = () => {
           <motion.button
             whileHover={{ scale: 1.2 }}
             onClick={handleMenuToggle}
-            className="text-red-600"
+            className="text-bardum"
             style={{ fontSize: "24px", cursor: "pointer" }}
             animate={{ rotate: isMenuOpen ? 180 : 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -76,7 +76,9 @@ const Header = () => {
         >
           <motion.div
             initial={{ opacity: 0, y: -100 }}
-            animate={isMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -100 }}
+            animate={
+              isMenuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: -100 }
+            }
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="lg:hidden fixed left-0 top-[70px] w-full bg-white shadow-md z-50 transition-all duration-300 ease-in-out"
           >
@@ -84,7 +86,7 @@ const Header = () => {
               <li className="border-b border-gray-300 py-3 px-3">
                 <Link
                   to="/aboutus"
-                  className="hover:text-red-700 text-gray-500 block font-semibold"
+                  className="hover:text-bardum text-gray-500 block font-semibold"
                 >
                   About Us
                 </Link>
@@ -92,7 +94,7 @@ const Header = () => {
               <li className="border-b border-gray-300 py-3 px-3">
                 <Link
                   to="/HomeEquity"
-                  className="hover:text-red-700 text-gray-500 block font-semibold"
+                  className="hover:text-bardum text-gray-500 block font-semibold"
                 >
                   Services
                 </Link>
@@ -100,7 +102,7 @@ const Header = () => {
               <li className="border-b border-gray-300 py-3 px-3">
                 <Link
                   to="/FinancialSolutions"
-                  className="hover:text-red-700 text-gray-500 block font-semibold"
+                  className="hover:text-bardum text-gray-500 block font-semibold"
                 >
                   Financial Solutions
                 </Link>
@@ -108,7 +110,7 @@ const Header = () => {
               <li className="border-b border-gray-300 py-3 px-3">
                 <Link
                   to="/contactus"
-                  className="hover:text-red-700 text-gray-500 block font-semibold"
+                  className="hover:text-bardum text-gray-500 block font-semibold"
                 >
                   Contact Us
                 </Link>

@@ -45,10 +45,10 @@ const Footer = () => {
         <p className="text-sm mt-8 text-gray-200">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
           gravida, mi eu pulvinar cursus, sem elit interdum mauris dipiscing
-          elit. Aenean gravida, mi eu pulvinar cursus.{" "}
+          elit. Aenean gravida, mi eu pulvinar cursus.
           <a
             href="javascript:void(0)"
-            className="text-sm font-semibold text-red-700"
+            className="text-sm font-semibold text-bardum"
           >
             Read more...
           </a>
@@ -128,35 +128,15 @@ const Footer = () => {
                 />
                 <path
                   fill="#fff"
-                  d="M11.998 3.139c-3.631 0-7.079-.323-8.396 3.057-.544 1.396-.465 3.209-.465 5.805 0 2.278-.073 4.419.465 5.804 1.314 3.382 4.79 3.058 8.394 3.058 3.477 0 7.062.362 8.395-3.058.545-1.41.465-3.196.465-5.804 0-3.462.191-5.697-1.637-7.728-2.264-2.651-5.87-2.588-8.277-2.588zm6.834 5.797v8.388c-1.271.39-2.645.393-3.993.393s-2.732-.005-3.994-.393v-8.388c1.261-.382 2.645-.395 3.994-.395s2.723.013 3.993.395zm-2.292-1.042c.573 0 1.016.455 1.016 1.031 0 .582-.443 1.031-1.016 1.031s-1.015-.449-1.015-1.031c0-.576.443-1.031 1.015-1.031zm-5.462 1.042c.572 0 1.014.455 1.014 1.031 0 .582-.442 1.031-1.014 1.031-.576 0-1.014-.449-1.014-1.031 0-.576.438-1.031 1.014-1.031z"
+                  d="M11.998 3.139c-3.631 0-7.079-.323-8.396 3.057-.544 1.396-.465 3.209-.465 5.805 0 2.278-.073 4.419.465 5.804 1.314 3.382 4.79 3.058 8.394 3.058 3.477 0 7.062.362 8.395-3.058.545-1.41.465-3.196.465-5.804 0-3.462.191-5.697-1.637-7.728-2.264-2.651-5.87-2.588-8.322-2.588zm.634 8.083a1.761 1.761 0 1 1 0-3.522 1.761 1.761 0 0 1 0 3.522zM22 12c0-2.634.02-5.36-.198-7.5-.184-1.511-1.328-2.631-2.844-2.944-2.153-.315-6.193.258-7.958 3.369-.885 1.626-1.099 3.405-1.099 5.487 0 2.642-.063 5.3.635 6.9 1.308 2.861 4.346 3.781 7.442 2.861 1.823-.499 2.909-2.057 3.163-3.953.211-1.434.155-3.582.155-5.368z"
                   aria-label="Instagram"
                 />
               </svg>
             </a>
           </li>
         </ul>
-
-        <p className="mt-10 text-gray-400 text-xs">
-          © 2024 Assurance Partners LLC. All rights reserved.
-        </p>
       </div>
-
-      <a
-        href="javascript:void(0)"
-        className="back-to-top bg-gray-900 text-white rounded-full p-2 fixed bottom-10 right-10 shadow-md transition-transform transform hover:scale-105"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-6 h-6"
-          viewBox="0 0 24 24"
-        >
-          <path fill="none" d="M0 0h24v24H0z" />
-          <path
-            fill="currentColor"
-            d="M12 4a1 1 0 0 1 .707.293l5 5a1 1 0 0 1-1.414 1.414L13 6.414V20a1 1 0 0 1-2 0V6.414l-3.293 3.293a1 1 0 1 1-1.414-1.414l5-5A1 1 0 0 1 12 4z"
-          />
-        </svg>
-      </a>
+      {/* Removed the "back-to-top" arrow */}
     </footer>
   );
 };

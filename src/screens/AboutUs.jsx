@@ -40,7 +40,9 @@ const AccordionItem = ({ title, content, index, activeIndex, onClick }) => {
         transition={{ duration: 0.3 }}
         className="overflow-hidden px-4 sm:px-6 pb-4 sm:pb-6"
       >
-        <p className="text-sm w-[80%] text-gray-600 ml-11 leading-relaxed">{content}</p>
+        <p className="text-sm w-[80%] text-gray-600 ml-11 leading-relaxed">
+          {content}
+        </p>
       </motion.div>
     </motion.div>
   );
@@ -102,16 +104,19 @@ const AboutUs = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           {/* Text Section */}
-          <div className="flex-1 p-4 sm:p-8 lg:w-1/2">
-            <h1 className="font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold text-red-600">
-              About <span className="text-red-600">Us</span>
-            </h1>
-            <p className="font-sans mt-6 text-base sm:text-lg text-gray-600">
-              At Assurance Partners LLC, we guide you through every step of your
-              financial journey. Whether you're planning for retirement,
-              investing, or seeking comprehensive solutions, our expert team is
-              here to ensure your goals are achieved with precision and care.
-            </p>
+          <div className="flex-1 p-4  justify-center items-center sm:p-8 lg:w-1/2">
+            <div className="mt-16">
+              <h1 className="font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold text-red-600">
+                About <span className="text-red-600">Us</span>
+              </h1>
+              <p className="font-sans mt-6 text-base sm:text-lg text-gray-600">
+                At Assurance Partners LLC, we guide you through every step of
+                your financial journey. Whether you're planning for retirement,
+                investing, or seeking comprehensive solutions, our expert team
+                is here to ensure your goals are achieved with precision and
+                care.
+              </p>
+            </div>
           </div>
 
           {/* Image Section */}

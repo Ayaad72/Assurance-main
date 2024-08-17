@@ -13,16 +13,14 @@ const LoanApplicationForm = () => {
     zipCode: "",
     driversLicense: "",
     driversLicenseState: "",
-    requestedAmount: "",
+    requestedAmount: 0,
     loanPurpose: "",
     credit: "",
     ownHome: "",
-    timeWithEmployer: "",
     employerName: "",
-    monthsAtCompany: "",
+    monthsAtCompany: 0,
     incomeType: "",
-    annualIncome: "",
-    monthlyIncome: "",
+    monthlyIncome: 0,
     payDate1: "",
     payFrequency: "",
     directDeposit: "",
@@ -44,81 +42,80 @@ const LoanApplicationForm = () => {
 
     if (currentSection === 0) {
       if (!formData.firstName) {
-        errors.firstName = "First Name should be filled first";
+        errors.firstName = "First name is required.";
       }
       if (!formData.lastName) {
-        errors.lastName = "First Name should be filled first";
+        errors.lastName = "Last name is required.";
       }
       if (!formData.email) {
-        errors.email = "Please enter a valid email address.";
+        errors.email = "Email is required.";
       }
       if (!formData.dob) {
-        errors.dob = "Please enter your  Date of Birth before proceeding";
+        errors.dob = "Date of birth is required";
       }
       if (!formData.ssn) {
-        errors.ssn = "SSN should be filled first";
+        errors.ssn = "SSN should is required";
       }
       if (!formData.phoneHome) {
         errors.phoneHome =
-          "Phone number should be in the format (XXX) XXX-XXXX.";
+          "Phone number is required.";
       }
       if (!formData.address1) {
         errors.address1 =
-          "Address can contain letters, numbers, commas, and hyphens.";
+          "Address is required.";
       }
       if (!formData.zipCode) {
         errors.zipCode =
-          "Zip Code should be 5 digits or 5+4 digits (e.g., 12345 or 12345-6789).";
+          "Zip Code is required.";
       }
       if (!formData.driversLicense) {
-        errors.driversLicense = "Driver's License should be filled.";
+        errors.driversLicense = "Driver's License is required.";
       }
       if (!formData.driversLicenseState) {
-        errors.driversLicenseState = "Driver's License State should be filled.";
+        errors.driversLicenseState = "Driver's License State is required.";
       }
-      if (!formData.loanPurpose) {
-        errors.loanPurpose = "Loan Purpose should be filled .";
-      }
+
     } else if (currentSection === 1) {
-      if (!formData.annualIncome) {
-        errors.annualIncome = "Annual Income should be filled.";
+      if (!formData.loanPurpose) {
+        errors.loanPurpose = "Loan purpose is required.";
       }
-
-      if (!formData.timeWithEmployer) {
-        errors.timeWithEmployer =
-          "Time with employer should be filled before proceeding.";
-      }
-
+    
       if (!formData.requestedAmount) {
-        errors.requestedAmount = "Requested Amount should be filled .";
-      }
-      if (!formData.timeWithEmployer) {
-        errors.monthlyIncome = "Time with employer should be filled .";
+        errors.requestedAmount = "Requested zmount is required.";
       }
       if (!formData.employerName) {
-        errors.employerName = "Employer Name should be filled .";
-      }
-      if (!formData.annualIncome) {
-        errors.annualIncome = "Annual income should be filled .";
+        errors.employerName = "Employer name is required.";
       }
       if (!formData.monthsAtCompany) {
-        errors.monthsAtCompany = "Months at Company should be filled";
+        errors.monthsAtCompany = "Months at company is required";
       }
-      // if (!formData.monthlyIncome) {
-      //   errors.monthlyIncome = "Monthly Income  should be filled";
-      // }
+      if (!formData.monthlyIncome) {
+        errors.monthlyIncome = "Monthly income is required";
+      }
       if (!formData.payDate1) {
-        errors.payDate1 = "Pay Date1  should be filled";
+        errors.payDate1 = "Pay date 1 is required";
       }
     } else if (currentSection === 2) {
+  
+
       if (!formData.bankName) {
-        errors.bankName = "Bank Name must be filled first.";
+        errors.bankName = "Bank name is required.";
+      }
+      if (!formData.directDeposit) {
+        errors.directDeposit = "Bank deposit is required.";
+      }
+      if (!formData.bankAccountType) {
+        errors.bankAccountType = "Bank account type is required.";
       }
       if (!formData.bankABA) {
-        errors.bankABA = "Bank ABA should be filled.";
+        errors.bankABA = "Bank ABA is required.";
+      }
+      if (!formData.bankAccountNumber) {
+        errors.bankAccountNumber = "Bank account number is required.";
       }
     }
-
+     
+     
     return errors;
   };
 
@@ -139,12 +136,14 @@ const LoanApplicationForm = () => {
   };
   const handlePrev = () => {
     setCurrentSection(currentSection - 1);
-    setProgress(progress - 33.33);
+      setShowSummary(false);
+      setProgress(progress - 33.33);
   };
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const handleSubmit = async (e) => {
+    console.log("ssssssssssssssssssssssssssssssss");
     e.preventDefault();
 
     // Validate the form data
@@ -159,107 +158,128 @@ const LoanApplicationForm = () => {
 
       // Optionally, handle the submission response
       if (response.success) {
-        // Handle successful submission, e.g., navigate to a success page or show a success message
+       
       } else {
         // Handle submission failure, e.g., show an error message
       }
 
-      setShowSummary(true); // Show summary after submission
+      setShowSummary(true);
     } else {
-      // If there are errors, set them in the state
       setFormErrors(errors);
     }
   };
 
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  
+  //   const errors = validateSection();
+  
+  //   if (Object.keys(errors).length === 0) {
+  //     setFormErrors({});
+  
+  //     try {
+  //       const response = await dataToSend(formData);
+  
+  //       if (response.success) {
+  //         setShowSummary(true);
+  //       } else {
+  //         setFormErrors(response.error.data.message);
+  //         if (response.error && response.error.data && response.error.data.message) {
+  //           alert(`Error: ${response.error.data.message}`);
+  //         } else {
+  //           alert('An error occurred while submitting the form. Please try again later.');
+  //         }
+  //       }
+  //     } catch (error) {
+  //       console.error('Error during data submission:', error);
+  //       alert('An unexpected error occurred. Please try again later.');
+  //     }
+  //   } else {
+  //     setFormErrors(errors);
+  //   }
+  // };
+
+  
   return (
     <div className="pb-[124px] font-sans min-h-screen flex flex-col items-center bg-gray-100">
       <header className="text-center py-8">
         <h1 className="text-3xl font-bold text-gray-700">Personal Loan Form</h1>
       </header>
 
-      <div className=" max-w-5xl mx-auto p-4 bg-white shadow-md rounded-md">
-        {/* Stepper Progress Bar */}
-        <div className="flex items-start max-w-screen-lg ml-[100px] mx-auto mb-6">
+      <div className="min-w-[80rem] max-w-5xl mx-auto p-4 bg-white shadow-md rounded-md">
+        <div className="flex items-start max-w-screen-lg ml-[230px] mx-auto mb-6">
           <div className="w-full">
             <div className="flex items-center w-full">
               <div
-                className={`w-8 h-8 shrink-0 p-1.5 flex items-center justify-center rounded-full ${
-                  currentSection >= 1 ? "bg-red-700" : "bg-red-700"
-                }`}
+                className={`w-8 h-8 shrink-0 p-1.5 flex items-center justify-center rounded-full ${currentSection >= 1 ? "bg-bardum" : "bg-bardum"
+                  }`}
               >
                 <span className="text-base text-white font-bold">1</span>
               </div>
               <div
-                className={`w-full h-1 mx-4 rounded-lg ${
-                  currentSection >= 1 ? "bg-red-700" : "bg-gray-300"
-                }`}
+                className={`w-full h-1 mx-4 rounded-lg ${currentSection >= 1 ? "bg-bardum" : "bg-gray-300"
+                  }`}
               ></div>
             </div>
             <div className="mt-2">
-              <h6 className="text-base font-bold text-red-700">
-                Personal Info
-              </h6>
+              <h6 style={{position:'relative', right:'20px'}} className="text-base font-bold  text-bardum">Personal Info</h6>
             </div>
           </div>
 
           <div className="w-full">
             <div className="flex items-center w-full">
               <div
-                className={`w-8 h-8 shrink-0 p-1.5 flex items-center justify-center rounded-full ${
-                  currentSection >= 2
-                    ? "bg-red-700"
+                className={`w-8 h-8 shrink-0 p-1.5 flex items-center justify-center rounded-full ${currentSection >= 2
+                    ? "bg-bardum"
                     : currentSection === 1
-                    ? "bg-gray-300"
-                    : "bg-gray-300"
-                }`}
+                      ? "bg-gray-300"
+                      : "bg-gray-300"
+                  }`}
               >
                 <span className="text-base text-white font-bold">2</span>
               </div>
               <div
-                className={`w-full h-1 mx-4 rounded-lg ${
-                  currentSection >= 2 ? "bg-red-700" : "bg-gray-300"
-                }`}
+                className={`w-full h-1 mx-4 rounded-lg ${currentSection >= 2 ? "bg-bardum" : "bg-gray-300"
+                  }`}
               ></div>
             </div>
             <div className="mt-2">
-              <h6 className="text-base font-bold text-red-700">Loan Info</h6>
+              <h6  className="text-base font-bold text-bardum">Loan Info</h6>
             </div>
           </div>
 
           <div className="w-full">
             <div className="flex items-center w-full">
               <div
-                className={`w-8 h-8 shrink-0 p-1.5 flex items-center justify-center rounded-full ${
-                  currentSection >= 3
-                    ? "bg-red-700"
+                className={`w-8 h-8 shrink-0 p-1.5 flex items-center justify-center rounded-full ${currentSection >= 3
+                    ? "bg-bardum"
                     : currentSection === 2
-                    ? "bg-red-700"
-                    : "bg-gray-300"
-                }`}
+                      ? "bg-bardum"
+                      : "bg-gray-300"
+                  }`}
               >
                 <span className="text-base text-white font-bold">3</span>
               </div>
               <div
-                className={`w-full h-1 mx-4 rounded-lg ${
-                  currentSection >= 3 ? "bg-red-700" : "bg-gray-300"
-                }`}
+                className={`w-full h-1 mx-4 rounded-lg ${currentSection >= 3 ? "bg-bardum" : "bg-gray-300"
+                  }`}
               ></div>
             </div>
             <div className="mt-2">
-              <h6 className="text-base font-bold text-red-700">Income Info</h6>
+              <h6  style={{position:'relative', right:'20px'}} className="text-base font-bold text-bardum">Income Info</h6>
             </div>
           </div>
 
           <div className="w-full">
             <div className="flex items-center">
               <div
-                className={`w-8 h-8 shrink-0 p-1.5 flex items-center justify-center rounded-full ${
-                  currentSection === 4
-                    ? "bg-red-700"
+                className={`w-8 h-8 shrink-0 p-1.5 flex items-center justify-center rounded-full ${currentSection === 4
+                    ? "bg-bardum"
                     : currentSection === 3
-                    ? "bg-red-700"
-                    : "bg-gray-300"
-                }`}
+                      ? "bg-bardum"
+                      : "bg-gray-300"
+                  }`}
               >
                 <span className="text-base text-white font-bold">
                   {currentSection === 4 ? (
@@ -284,14 +304,14 @@ const LoanApplicationForm = () => {
               </div>
             </div>
             <div className="mt-2">
-              <h6 className="text-base font-bold text-red-700">Complete</h6>
+              <h6 style={{position:'relative', right:'20px'}} className="text-base font-bold text-bardum">Complete</h6>
             </div>
           </div>
         </div>
 
         <form id="loanForm " onSubmit={handleSubmit}>
           {Object.keys(formErrors).length > 0 && (
-            <div className="mb-4 p-4 bg-red-100 text-red-700 rounded-md">
+            <div className="mb-4 p-4 bg-red-100 text-bardum rounded-md">
               <p>{Object.values(formErrors)[0]}</p>
             </div>
           )}
@@ -301,167 +321,157 @@ const LoanApplicationForm = () => {
                 Personal Information
               </legend>
               {/* Personal Info Fields */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="firstName" className="block mb-2">
-                    First Name
-                  </label>
-                  <input
-                    type="text"
-                    min="5"
-                    max="50"
-                    id="firstName"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
-                  />
-                  <small className="text-gray-600">
-                    Please enter your first name
-                  </small>
-                </div>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+  <div>
+    <label htmlFor="firstName" className="block text-sm mb-2">
+      First Name
+    </label>
+    <input
+      type="text"
+      id="firstName"
+      name="firstName"
+      value={formData.firstName}
+      placeholder="Please enter your first name"
+      onChange={handleChange}
+      className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md outline-none sm:text-base md:text-base lg:text-lg"
+    />
+  </div>
 
-                <div>
-                  <label htmlFor="lastName" className="block mb-2">
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
-                  />
-                  <small className="text-gray-600">
-                    Please enter your last name
-                  </small>
-                </div>
-                <div>
-                  <label className="block mb-2">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
-                  />
-                  <small className="text-gray-600">
-                    Enter your email address
-                  </small>
-                </div>
-                <div>
-                  <label htmlFor="dob" className="block mb-2">
-                    Date of Birth
-                  </label>
-                  <input
-                    type="date"
-                    id="dob"
-                    name="dob"
-                    value={formData.dob}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
-                  />
-                  <small className="text-gray-600">
-                    Enter your date of birth (MM/DD/YYYY)
-                  </small>
-                </div>
-                <div>
-                  <label htmlFor="ssn" className="block mb-2">
-                    SSN
-                  </label>
-                  <input
-                    type="number"
-                    id="ssn"
-                    name="ssn"
-                    value={formData.ssn}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
-                  />
-                  <small className="text-gray-600">
-                    Enter your Social Security Number (SSN).
-                  </small>
-                </div>
-                <div>
-                  <label htmlFor="phoneHome" className="block mb-2">
-                    Home Phone
-                  </label>
-                  <input
-                    type="text"
-                    id="phoneHome"
-                    name="phoneHome"
-                    value={formData.phoneHome}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
-                  />
-                  <small className="text-gray-600">
-                    Enter your home phone number.
-                  </small>
-                </div>
-                <div>
-                  <label htmlFor="address1" className="block mb-2">
-                    Address
-                  </label>
-                  <input
-                    type="text"
-                    id="address1"
-                    name="address1"
-                    value={formData.address1}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
-                  />
-                  <small className="text-gray-600">Enter your address.</small>
-                </div>
-                <div>
-                  <label htmlFor="zipCode" className="block mb-2">
-                    Zip Code
-                  </label>
-                  <input
-                    type="number"
-                    min="2"
-                    max="5"
-                    id="zipCode"
-                    name="zipCode"
-                    value={formData.zipCode}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
-                  />
-                  <small className="text-gray-600">Enter your zip code</small>
-                </div>
-                <div>
-                  <label htmlFor="driversLicense" className="block mb-2">
-                    Driver's License
-                  </label>
-                  <input
-                    type="number"
-                    id="driversLicense"
-                    name="driversLicense"
-                    value={formData.driversLicense}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
-                  />
-                  <small className="text-gray-600">
-                    Enter a number between 1 and 100.
-                  </small>
-                </div>
-                <div>
-                  <label htmlFor="driversLicenseState" className="block mb-2">
-                    Driver's License State
-                  </label>
-                  <input
-                    type="text"
-                    id="driversLicenseState"
-                    name="driversLicenseState"
-                    value={formData.driversLicenseState}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
-                  />
-                  <small className="text-gray-600">
-                    Please enter your Driving License State
-                  </small>
-                </div>
-              </div>
+  <div>
+    <label htmlFor="lastName" className="block text-sm mb-2">
+      Last Name
+    </label>
+    <input
+      type="text"
+      id="lastName"
+      name="lastName"
+      value={formData.lastName}
+      placeholder="Please enter your last name"
+      onChange={handleChange}
+      className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md outline-none sm:text-base md:text-base lg:text-lg"
+    />
+  </div>
+
+  <div>
+    <label htmlFor="email" className="block text-sm mb-2">
+      Email
+    </label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      value={formData.email}
+      onChange={handleChange}
+      placeholder="Please enter your email"
+      className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md outline-none sm:text-base md:text-base lg:text-lg"
+    />
+  </div>
+
+  <div>
+    <label htmlFor="dob" className="block text-sm mb-2">
+      Date of Birth
+    </label>
+    <input
+      type="date"
+      id="dob"
+      name="dob"
+      value={formData.dob}
+      onChange={handleChange}
+      className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md outline-none sm:text-base md:text-base lg:text-lg"
+    />
+  </div>
+
+  <div>
+    <label htmlFor="ssn" className="block text-sm mb-2">
+      SSN
+    </label>
+    <input
+      type="number"
+      id="ssn"
+      name="ssn"
+      value={formData.ssn}
+      placeholder="Enter your Social Security Number (SSN)."
+      onChange={handleChange}
+      className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md outline-none sm:text-base md:text-base lg:text-lg"
+    />
+  </div>
+
+  <div>
+    <label htmlFor="phoneHome" className="block text-sm mb-2">
+      Home Phone
+    </label>
+    <input
+      type="text"
+      id="phoneHome"
+      name="phoneHome"
+      value={formData.phoneHome}
+      placeholder="Enter your home phone number."
+      onChange={handleChange}
+      className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md outline-none sm:text-base md:text-base lg:text-lg"
+    />
+  </div>
+
+  <div>
+    <label htmlFor="address1" className="block text-sm mb-2">
+      Address
+    </label>
+    <input
+      type="text"
+      id="address1"
+      name="address1"
+      value={formData.address1}
+      placeholder="Enter your address"
+      onChange={handleChange}
+      className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md outline-none sm:text-base md:text-base lg:text-lg"
+    />
+  </div>
+
+  <div>
+    <label htmlFor="zipCode" className="block text-sm mb-2">
+      Zip Code
+    </label>
+    <input
+      type="number"
+      id="zipCode"
+      name="zipCode"
+      value={formData.zipCode}
+      placeholder="Enter your zip code"
+      onChange={handleChange}
+      className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md outline-none sm:text-base md:text-base lg:text-lg"
+    />
+  </div>
+
+  <div>
+    <label htmlFor="driversLicense" className="block text-sm mb-2">
+      Driver's License
+    </label>
+    <input
+      type="number"
+      id="driversLicense"
+      name="driversLicense"
+      value={formData.driversLicense}
+      placeholder="Enter a number between 1 and 100."
+      onChange={handleChange}
+      className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md outline-none sm:text-base md:text-base lg:text-lg"
+    />
+  </div>
+
+  <div>
+    <label htmlFor="driversLicenseState" className="block text-sm mb-2">
+      Driver's License State
+    </label>
+    <input
+      type="text"
+      id="driversLicenseState"
+      name="driversLicenseState"
+      value={formData.driversLicenseState}
+      placeholder="Please enter your Driving License State"
+      onChange={handleChange}
+      className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md outline-none sm:text-base md:text-base lg:text-lg"
+    />
+  </div>
+</div>
+
             </fieldset>
           )}
           {/* Income Information Section */}
@@ -502,85 +512,11 @@ const LoanApplicationForm = () => {
                     <option value="Household">Household</option>
                     <option value="Other">Other</option>
                   </select>
-                  <small className="text-gray-600">
+                  {/* <small className="text-gray-600">
                     Enter the purpose of the loan.
-                  </small>
+                  </small> */}
                 </div>
-                <div>
-                  <label htmlFor="annualIncome" className="block mb-2">
-                    Annual Income
-                  </label>
-                  <input
-                    type="number"
-                    id="annualIncome"
-                    name="annualIncome"
-                    value={formData.annualIncome}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
-                  />
-                  <small className="text-gray-600">
-                    Enter your annual income
-                  </small>
-                </div>
-                {/* <div>
-                  <label htmlFor="employmentStatus" className="block mb-2">
-                    Employment Status
-                  </label>
-                  <input
-                    type="text"
-                    id="employmentStatus"
-                    name="employmentStatus"
-                    value={formData.employmentStatus}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
-                  />
-                </div> */}
-                {/* <div>
-                  <label htmlFor="workPhone" className="block mb-2">
-                    Work Phone
-                  </label>
-                  <input
-                    required
-                    type="text"
-                    id="workPhone"
-                    name="workPhone"
-                    value={formData.workPhone}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
-                  />
-                  <small className="text-gray-600">
-                    Enter your Phone Number
-                  </small>
-                </div> */}
-                {/* <div>
-                  <label htmlFor="position" className="block mb-2">
-                    Position
-                  </label>
-                  <input
-                    type="text"
-                    id="position"
-                    name="position"
-                    value={formData.position}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
-                  />
-                </div> */}
-                <div>
-                  <label htmlFor="timeWithEmployer" className="block mb-2">
-                    Time with Employer
-                  </label>
-                  <input
-                    type="number"
-                    id="timeWithEmployer"
-                    name="timeWithEmployer"
-                    value={formData.timeWithEmployer}
-                    onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
-                  />
-                  <small className="text-gray-600">
-                    Please enter your time with employer
-                  </small>
-                </div>
+
                 <div>
                   <label htmlFor="requestedAmount" className="block mb-2">
                     Requested Amount
@@ -593,9 +529,9 @@ const LoanApplicationForm = () => {
                     onChange={handleChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
-                  <small className="text-gray-600">
+                  {/* <small className="text-gray-600">
                     Please enter your Requested Amount
-                  </small>
+                  </small> */}
                 </div>
                 <div>
                   <label htmlFor="credit" className="block mb-2">
@@ -616,9 +552,9 @@ const LoanApplicationForm = () => {
                     <option value="Verypoor">Very Poor</option>
                     <option value="Unsure">Unsure</option>
                   </select>
-                  <small className="text-gray-600">
+                  {/* <small className="text-gray-600">
                     Please select your credit score
-                  </small>
+                  </small> */}
                 </div>
 
                 <div>
@@ -635,7 +571,7 @@ const LoanApplicationForm = () => {
                     <option value="true">Yes</option>
                     <option value="false">No</option>
                   </select>
-                  <small className="text-gray-600">Do you own a house?</small>
+                  {/* <small className="text-gray-600">Do you own a house?</small> */}
                 </div>
                 <div>
                   <label htmlFor="employerName" className="block mb-2">
@@ -646,12 +582,13 @@ const LoanApplicationForm = () => {
                     id="employerName"
                     name="employerName"
                     value={formData.employerName}
+                    placeholder="  Please enter Employer name"
                     onChange={handleChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
-                  <small className="text-gray-600">
-                    Please enter Employer name
-                  </small>
+                  {/* <small className="text-gray-600">
+                  
+                  </small> */}
                 </div>
                 <div>
                   <label htmlFor="monthsAtCompany" className="block mb-2">
@@ -665,9 +602,9 @@ const LoanApplicationForm = () => {
                     onChange={handleChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
-                  <small className="text-gray-600">
+                  {/* <small className="text-gray-600">
                     Please enter months in company
-                  </small>
+                  </small> */}
                 </div>
                 <div>
                   <label htmlFor="incomeType" className="block mb-2">
@@ -687,9 +624,9 @@ const LoanApplicationForm = () => {
                     <option value="retired">Retired</option>
                     <option value="unemployed">Unemployed</option>
                   </select>
-                  <small className="text-gray-600">
+                  {/* <small className="text-gray-600">
                     Please select the income type
-                  </small>
+                  </small> */}
                 </div>
                 <div>
                   <label htmlFor="monthlyIncome" className="block mb-2">
@@ -703,9 +640,9 @@ const LoanApplicationForm = () => {
                     onChange={handleChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
-                  <small className="text-gray-600">
+                  {/* <small className="text-gray-600">
                     Please enter your Monthly Income
-                  </small>
+                  </small> */}
                 </div>
                 <div>
                   <label htmlFor="payDate1" className="block mb-2">
@@ -719,9 +656,9 @@ const LoanApplicationForm = () => {
                     onChange={handleChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
-                  <small className="text-gray-600">
+                  {/* <small className="text-gray-600">
                     Please enter your pay date
-                  </small>
+                  </small> */}
                 </div>
                 <div>
                   <label htmlFor="payFrequency" className="block mb-2">
@@ -739,9 +676,9 @@ const LoanApplicationForm = () => {
                     <option value="Semimonthly">Semi-Monthly</option>
                     <option value="Monthly">Monthly</option>
                   </select>
-                  <small className="text-gray-600">
+                  {/* <small className="text-gray-600">
                     Please select your pay frequency
-                  </small>
+                  </small> */}
                 </div>
               </div>
             </fieldset>
@@ -801,12 +738,13 @@ const LoanApplicationForm = () => {
                     id="bankName"
                     name="bankName"
                     value={formData.bankName}
+                    placeholder="  Please enter your bank name"
                     onChange={handleChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
-                  <small className="text-gray-600">
-                    Please enter your bank name
-                  </small>
+                  {/* <small className="text-gray-600">
+                  
+                  </small> */}
                 </div>
                 {/* <div>
                   <label htmlFor="accountType" className="block mb-2">
@@ -829,6 +767,7 @@ const LoanApplicationForm = () => {
                     id="directDeposit"
                     name="directDeposit"
                     value={formData.directDeposit}
+
                     onChange={handleChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                     required
@@ -840,9 +779,9 @@ const LoanApplicationForm = () => {
                     <option value="0">0</option>
                     <option value="No">No</option>
                   </select>
-                  <small className="text-gray-600">
+                  {/* <small className="text-gray-600">
                     Please enter your first name
-                  </small>
+                  </small> */}
                 </div>
                 <div>
                   <label htmlFor="bankAccountType" className="block mb-2">
@@ -860,9 +799,9 @@ const LoanApplicationForm = () => {
                     <option value="Savings">Savings</option>
                   </select>
 
-                  <small className="text-gray-600">
+                  {/* <small className="text-gray-600">
                     Bank Account Type should be 'checking' or 'savings'.
-                  </small>
+                  </small> */}
                 </div>
                 <div>
                   <label htmlFor="bankABA" className="block mb-2">
@@ -874,13 +813,14 @@ const LoanApplicationForm = () => {
                     name="bankABA"
                     value={formData.bankABA}
                     onChange={handleChange}
+                    placeholder="   please enter your Bank ABA"
                     pattern="\d{9}"
                     required
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
-                  <small className="text-gray-600">
-                    please enter your Bank ABA
-                  </small>
+                  {/* <small className="text-gray-600">
+                  Enter the purpose of the loan.
+                  </small> */}
                 </div>
                 <div>
                   <label className="block mb-2">Bank Account Number</label>
@@ -888,6 +828,7 @@ const LoanApplicationForm = () => {
                     type="number"
                     id="bankAccountNumber"
                     name="bankAccountNumber"
+                    placeholder="please enter your Bank Account Number"
                     value={formData.bankAccountNumber}
                     onChange={handleChange}
                     minlength="4"
@@ -895,15 +836,17 @@ const LoanApplicationForm = () => {
                     required
                     className="w-full px-3 py-2 border border-gray-300 rounded-md outline-none"
                   />
-                  <small className="text-gray-600">
-                    please enter your Bank Account Number
-                  </small>
+                  {/* <small className="text-gray-600">
+                  Enter the purpose of the loan.
+                  </small> */}
                 </div>
               </div>
             </fieldset>
           )}
           {/* ------------------ */}
-          <div className="flex  mt-6 justify-between">
+          {showSummary && <Summary formData={formData} />}
+
+          <div className="flex  mt-6 justify-between ">
             <div className="flex justify-start">
               {currentSection > 0 && (
                 <button
@@ -919,20 +862,20 @@ const LoanApplicationForm = () => {
               <button
                 type="button"
                 onClick={handleNext}
-                className="py-2 px-[60px]  bg-transparent transition-all duration-300 ease-in-out   text-red-700 border hover:bg-red-700 hover:text-white  border-red-700 font-semibold rounded-md"
+                className="py-2 px-[60px]  bg-transparent transition-all duration-300 ease-in-out   text-bardum border hover:bg-bardum hover:text-white  border-bardum font-semibold rounded-md"
               >
                 Next
               </button>
             ) : (
               <button
                 type="submit"
-                className="py-2 px-4 bg-red-600 text-white rounded-md"
+                className="py-2 px-4 bg-bardum text-white rounded-md"
               >
                 Submit
               </button>
             )}
           </div>
-          {showSummary && <Summary formData={formData} />}
+        
         </form>
       </div>
     </div>

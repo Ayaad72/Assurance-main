@@ -6,9 +6,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        main: {
-          DEFAULT: "var(--blueThemeColor)",
-          background: "var(--blueThemeColor)",
+        bardum: {
+          DEFAULT: "#b81616", // Replace with the exact red-700 value
+          light: "#9e151d", // Lighter shade for hover
+        },
+        gray: {
+          600: "#717996", // Replace with the exact gray-600 value
         },
       },
     },

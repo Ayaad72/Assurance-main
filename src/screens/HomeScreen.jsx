@@ -102,8 +102,8 @@ const HomeScreen = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-gray-800 lg:text-6xl md:text-5xl text-3xl font-extrabold mb-4 md:!leading-[56px]">
-              <span className="text-red-700">Assuring</span> Your Future
-              <span className="text-red-700"> and Financial Success</span>
+              <span className="text-bardum">Assuring</span> Your Future
+              <span className="text-bardum"> and Financial Success</span>
             </h2>
             <p className="text-gray-700 mt-6 text-base leading-relaxed px-4 md:px-0">
               At Assurance Partners LLC, we guide you through every step of your
@@ -115,7 +115,7 @@ const HomeScreen = () => {
             </p>
             <button
               type="button"
-              className="mt-6 bg-transparent hover:bg-red-700 hover:text-white border-2 border-red-700 transition-all text-red-700 font-semibold text-sm tracking-wide rounded-md px-6 py-2.5"
+              className="mt-6 bg-transparent hover:bg-bardum hover:text-white border-2 border-bardum transition-all text-bardum font-semibold text-sm tracking-wide rounded-md px-6 py-2.5"
               onClick={handleSubmit}
               disabled={isLoading}
             >
@@ -128,7 +128,7 @@ const HomeScreen = () => {
               </p>
             )}
             {error && (
-              <p className="text-red-700 mt-2">
+              <p className="text-bardum mt-2">
                 Failed to send loan request. Please try again.
               </p>
             )}
@@ -210,7 +210,7 @@ const HomeScreen = () => {
         >
           {/* Main Heading */}
           <div className="text-center mb-8">
-            <p className="text-red-700 text-2xl font-bold mb-2">
+            <p className="text-bardum text-2xl font-bold mb-2">
               Featured Rates on Our Network
             </p>
             <p className="text-gray-700 text-sm">
@@ -239,7 +239,7 @@ const HomeScreen = () => {
               apr="11.25"
               term="3 YEAR FIXED"
               amount="20,000"
-              color="border-red-700"
+              color="border-bardum"
             />
             <Percentage
               title="Home Equity"
