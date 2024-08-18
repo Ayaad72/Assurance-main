@@ -103,7 +103,7 @@ const FinancialSolutions = () => {
           >
             <Link
               to="/HomeEquity"
-              className="px-4 md:px-6 py-2 md:py-3 bg-bardum border-[2px] border-[#d70040] text-white rounded-md text-base md:text-lg font-medium hover:bg-bardum transition"
+              className="px-4 md:px-6 py-2 md:py-3 bg-bardum border-[2px] border-[#d70040] text-white rounded-md text-base md:text-lg font-medium hover:bg-red-800 transition"
             >
               Explore Our Solutions
             </Link>
@@ -126,7 +126,7 @@ const FinancialSolutions = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="text-3xl md:text-4xl text-red-500 font-bold mb-8"
+            className="text-3xl md:text-4xl text-[#d70040] font-bold mb-8"
           >
             Comprehensive Financial Solutions
           </motion.h2>

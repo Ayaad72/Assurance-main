@@ -106,8 +106,8 @@ const AboutUs = () => {
           {/* Text Section */}
           <div className="flex-1 p-4  justify-center items-center sm:p-8 lg:w-1/2">
             <div className="mt-16">
-              <h1 className="font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold text-red-600">
-                About <span className="text-red-600">Us</span>
+              <h1 className="font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#d70040]">
+                About <span className="text-[#d70040]">Us</span>
               </h1>
               <p className="font-sans mt-6 text-base sm:text-lg text-gray-600">
                 At Assurance Partners LLC, we guide you through every step of
@@ -138,7 +138,7 @@ const AboutUs = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-red-600 font-sans">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#d70040] font-sans">
             Our Mission
           </h2>
           <p className="mt-6 text-base sm:text-lg text-gray-600 max-w-4xl mx-auto font-sans">

@@ -223,8 +223,9 @@ const LoanApplicationForm = () => {
               ></div>
             </div>
             <div className="mt-2">
-              <h6 style={{position:'relative', right:'20px'}} className="text-base font-bold  text-bardum">Personal Info</h6>
-            </div>
+  <h6 className="text-base font-bold text-bardum relative right-5">Personal Info</h6>
+</div>
+
           </div>
 
           <div className="w-full">
@@ -245,8 +246,9 @@ const LoanApplicationForm = () => {
               ></div>
             </div>
             <div className="mt-2">
-              <h6  className="text-base font-bold text-bardum">Loan Info</h6>
-            </div>
+  <h6 className="text-base font-bold text-bardum relative right-5">Loan Info</h6>
+</div>
+
           </div>
 
           <div className="w-full">
@@ -304,8 +306,9 @@ const LoanApplicationForm = () => {
               </div>
             </div>
             <div className="mt-2">
-              <h6 style={{position:'relative', right:'20px'}} className="text-base font-bold text-bardum">Complete</h6>
-            </div>
+  <h6 className="text-base font-bold text-bardum relative right-5">Complete</h6>
+</div>
+
           </div>
         </div>
 

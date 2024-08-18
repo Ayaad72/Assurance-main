@@ -129,10 +129,9 @@ const HomeEquityComponent = () => {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 50 }}
         transition={{ duration: 0.5 }}
-        className="w-full bg-white rounded-lg shadow-lg flex"
-        style={{ width: "900px", height: "426px" }}
+        className="w-full max-w-4xl bg-white rounded-lg shadow-lg flex flex-col md:flex-row"
       >
-        <div className="w-1/2 p-6 mt-[40px]">
+        <div className="w-full md:w-1/2 p-6">
           <h2 className="text-xl text-bardum font-semibold mb-2">
             {selectedCard.name}
           </h2>
@@ -151,12 +150,12 @@ const HomeEquityComponent = () => {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="w-1/2"
+          className="w-full md:w-1/2 flex justify-center items-center"
         >
           <img
             src={selectedCard.image}
             alt={selectedCard.name}
-            className="w-full h-full object-contain rounded-lg"
+            className="w-full h-auto object-contain rounded-lg"
           />
         </motion.div>
       </motion.div>
